@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Devorador()
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Jack\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ move()
+comment3.params=
+comment3.target=void\ avanzaJack()
+comment3.text=\r\n\ \u00C9ste\ m\u00E9todo\ verifica\ si\ el\ ladron\ esta\ parado\ o\ caminando\ con\ la\ variable\ booleana\ parado.\ Se\ verifica\ su\r\n\ direcci\u00F3n\ y\ movimiento\ y\ se\ cambia\ por\ la\ imagen\ que\ le\ corresponda\ para\ cuando\ se\ presione\r\n\ una\ tecla\ se\ vea\ que\ el\ personaje\ camina\r\n
+comment4.params=
+comment4.target=void\ caminar()
+numComments=5
