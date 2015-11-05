@@ -21,9 +21,9 @@ public class Fresa extends Comida
         
         //Greenfoot.delay(20);
         //Greenfoot.setSpeed(20);
-        if ( Greenfoot.getRandomNumber(1000) < 30 )
+        if ( Greenfoot.getRandomNumber(1000) < 10 )
         {
-            setLocation(Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
+            setLocation(Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y-100));
         }
     }    
 }

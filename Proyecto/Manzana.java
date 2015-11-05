@@ -13,10 +13,10 @@ public class Manzana extends Comida
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {  //this.setRotation(90);
-        //move(5);
-       mueveManzana();
-        checaManzana();
+    { 
+       this.setRotation(90);
+        mueveManzana();
+         checaManzana();
     }
     public void checaManzana()
     { //  x getWidth();
@@ -29,14 +29,49 @@ public class Manzana extends Comida
            world.removeObject(this);
     }
     public void mueveManzana()
-    {   int y = getY();
- 
-         for(int i=5;i<y;i++)
-        {
-          if(y==i)
-          this.setLocation(getX()+i,getY());  
-           this.setRotation(0);
-        }
-        this.setRotation(90);
+    {   
+        
+            if(getY()>20 && getY()<100 )
+            {
+              this.setLocation(getX(), getY()+5);
+            }
+            if(getY()==100)
+            {
+             this.setLocation(getX()+50, getY());
+            }
+             
+             if(getY()>=100 && getY()<200 )
+            {
+              this.setLocation(getX(), getY()+5);
+            }
+            
+             if(getY()==200)
+            {
+             this.setLocation(getX()+50, getY());
+            }
+            
+             if(getY()>=200 && getY()<300 )
+            {
+              this.setLocation(getX(), getY()+5);
+            }
+            
+             if(getY()==300)
+            {
+             this.setLocation(getX()+50, getY());
+            }
+            
+             if(getY()>=300 && getY()<400 )
+            {
+              this.setLocation(getX(), getY()+5);
+            }
+            if(getY()==400)
+            {
+             this.setLocation(getX()+50, getY());
+            }
+            
+            if(getY()>=400 && getY()<480 )
+            {
+              this.setLocation(getX(), getY()+5);
+            }
 }
 }

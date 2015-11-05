@@ -14,6 +14,18 @@ public class Pizza extends Obstaculo
      */
     public void act() 
     {
-        // Add your action code here.
+        move(10);
+       checaPizza();
     }    
+     public void checaPizza()
+    {
+        World world;
+        world = getWorld();
+        int x = getX();
+        int worldWidth = world.getWidth();
+       if(x>=worldWidth-20)
+       {
+           world.removeObject(this);
+       }
+}
 }
