@@ -1,15 +1,15 @@
 #BlueJ class context
 comment0.params=counterPuntos
 comment0.target=Devorador(Counter)
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Jack\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\n\ Act\ -\ do\ whatever\ the\ Jack\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=protected\ void\ addedToWorld(World\ mundo)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ //World\ mundo\ \=\ getWorld();\r\n\ \ \ \ \ \ \ \ mundo.addObject(counter,45,15);\ \ \r\n}
+comment1.text=protected\ void\ addedToWorld(World\ mundo)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ //World\ mundo\ \=\ getWorld();\n\ \ \ \ \ \ \ \ mundo.addObject(counter,45,15);\ \ \n}
 comment2.params=
 comment2.target=void\ move()
 comment3.params=
 comment3.target=void\ avanzaJack()
-comment3.text=\r\n\ \u00C9ste\ m\u00E9todo\ verifica\ si\ el\ ladron\ esta\ parado\ o\ caminando\ con\ la\ variable\ booleana\ parado.\ Se\ verifica\ su\r\n\ direcci\u00F3n\ y\ movimiento\ y\ se\ cambia\ por\ la\ imagen\ que\ le\ corresponda\ para\ cuando\ se\ presione\r\n\ una\ tecla\ se\ vea\ que\ el\ personaje\ camina\r\n
+comment3.text=\n\ \u00C9ste\ m\u00E9todo\ verifica\ si\ el\ ladron\ esta\ parado\ o\ caminando\ con\ la\ variable\ booleana\ parado.\ Se\ verifica\ su\n\ direcci\u00F3n\ y\ movimiento\ y\ se\ cambia\ por\ la\ imagen\ que\ le\ corresponda\ para\ cuando\ se\ presione\n\ una\ tecla\ se\ vea\ que\ el\ personaje\ camina\n
 comment4.params=
 comment4.target=void\ caminar()
 comment5.params=

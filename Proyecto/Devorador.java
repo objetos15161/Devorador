@@ -72,6 +72,13 @@ public Devorador(Counter counterPuntos)
        move();
        caminar();
     }    
+    
+    
+    public void metodoY()
+    {
+        
+    }
+    
       public void move()
     {
       if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("left")){
