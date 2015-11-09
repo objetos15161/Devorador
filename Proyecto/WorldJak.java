@@ -8,7 +8,8 @@ import greenfoot.*;
  */
 public class WorldJak extends World
 {
-
+   
+    
     /**
      * Constructor for objects of class WorldJak.
      * 
@@ -44,29 +45,34 @@ public class WorldJak extends World
         int x= getWidth();
         int y= getHeight();
         
-    
-        Devorador jack = new Devorador(); 
+       Counter counter = new Counter();
+       addObject(counter, 47, 16);
+        
         Exit e = new Exit(); 
         Selve selve = new Selve();
         Selve selve1 = new Selve();
         Selve selve2 = new Selve();
         Selve selve3 = new Selve();
+        Selve selve4 = new Selve();
+        Selve selve5 = new Selve();
         Fresa str= new Fresa();
         Fresa  str1= new Fresa();
         
-        
-
-        addObject(jack,(getWidth()/2),getHeight()-250);
      
-        addObject(selve,750,20);
-        addObject(selve1,650,20);
-        addObject(selve2,550,20);
-        addObject(selve3,60,20);
-        addObject(e,getWidth()/2,25);
+        addObject(selve,750,480);
+        addObject(selve1,650,480);
+        addObject(selve2,550,480);
+        addObject(selve3,60,480);
+        addObject(selve4,160,480);
+        addObject(selve5,260,480);
+        
+        addObject(e,getWidth()/2,475);
        
        addObject(str, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
        addObject(str1, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
-
+       
+       Devorador jack = new Devorador(counter); 
+       addObject(jack,(getWidth()/2),getHeight()-250);
     }
     
     private void creaPlatano()
@@ -96,6 +102,7 @@ public class WorldJak extends World
         int y = Greenfoot.getRandomNumber(getHeight()+100);//y va a tomar diferentes posiciones
         addObject(p,50, y-100);
     }
+    
    /*  private void creaFresa()
     {
       Fresa f= new Fresa();

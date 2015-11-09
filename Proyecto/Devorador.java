@@ -33,11 +33,15 @@ public class Devorador extends Actor
     private GreenfootImage arri1;
     private GreenfootImage arri2;
     
+    private int puntos=0;
+    private Counter counter;
+
+    
     /**
      * Act - do whatever the Jack wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-public Devorador()
+public Devorador(Counter counterPuntos)
 {
     paradoI=new GreenfootImage("parado.png"); 
     der1=new GreenfootImage("der1.png"); 
@@ -53,7 +57,16 @@ public Devorador()
     paradoB=true;
     avanza=0;
     direccion=IZQUIERDA;
+    
+    counter= counterPuntos;
+    
 }
+
+/*protected void addedToWorld(World mundo)
+    {
+        //World mundo = getWorld();
+        mundo.addObject(counter,45,15);  
+    }*/
     public void act() 
     {
        move();
@@ -163,5 +176,29 @@ public Devorador()
             avanza=0;
         }
         avanzaJack(); 
+    }
+    
+    public void sumarPuntos()
+    { 
+        if(isTouching(Platano.class))
+        {
+            //counter.add(10); 
+    
+            counter.add(10);
+        }
+        
+        if(isTouching(Manzana.class))
+        {
+            //counter.setValue(counter.getValue()+20); 
+            counter.add(20);
+        }
+        
+        if(isTouching(Fresa.class))
+       {
+            
+            //counter.setValue(counter.getValue()+40); 
+            counter.add(40);
+        }
+        
     }
 }
