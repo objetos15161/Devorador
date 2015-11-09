@@ -6,12 +6,19 @@ comment1.params=
 comment1.target=void\ act()
 comment1.text=protected\ void\ addedToWorld(World\ mundo)\n\ \ \ \ {\n\ \ \ \ \ \ \ \ //World\ mundo\ \=\ getWorld();\n\ \ \ \ \ \ \ \ mundo.addObject(counter,45,15);\ \ \n}
 comment2.params=
-comment2.target=void\ move()
+comment2.target=void\ metodoX()
 comment3.params=
+<<<<<<< HEAD
 comment3.target=void\ avanzaJack()
 comment3.text=\n\ \u00C9ste\ m\u00E9todo\ verifica\ si\ el\ ladron\ esta\ parado\ o\ caminando\ con\ la\ variable\ booleana\ parado.\ Se\ verifica\ su\n\ direcci\u00F3n\ y\ movimiento\ y\ se\ cambia\ por\ la\ imagen\ que\ le\ corresponda\ para\ cuando\ se\ presione\n\ una\ tecla\ se\ vea\ que\ el\ personaje\ camina\n
+=======
+comment3.target=void\ move()
+>>>>>>> origin/master
 comment4.params=
-comment4.target=void\ caminar()
+comment4.target=void\ avanzaJack()
+comment4.text=\r\n\ \u00C9ste\ m\u00E9todo\ verifica\ si\ el\ ladron\ esta\ parado\ o\ caminando\ con\ la\ variable\ booleana\ parado.\ Se\ verifica\ su\r\n\ direcci\u00F3n\ y\ movimiento\ y\ se\ cambia\ por\ la\ imagen\ que\ le\ corresponda\ para\ cuando\ se\ presione\r\n\ una\ tecla\ se\ vea\ que\ el\ personaje\ camina\r\n
 comment5.params=
-comment5.target=void\ sumarPuntos()
-numComments=6
+comment5.target=void\ caminar()
+comment6.params=
+comment6.target=void\ sumarPuntos()
+numComments=7

@@ -73,10 +73,10 @@ public Devorador(Counter counterPuntos)
        caminar();
     }    
     
+
     
-    public void metodoY()
+    public void metodoZ()
     {
-        
     }
     
       public void move()
