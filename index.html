@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Devorador by objetos15161</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Devorador</h1>
-      <h2 class="project-tagline">greenfoot </h2>
-      <a href="https://github.com/objetos15161/Devorador" class="btn">View on GitHub</a>
-      <a href="https://github.com/objetos15161/Devorador/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/objetos15161/Devorador/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <section class="main-content">
-      <h3>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Devorador by objetos15161</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Devorador</h1>
+        <h2>greenfoot </h2>
+        <a href="https://github.com/objetos15161/Devorador" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h3>
 <a id="bienvenido-a-la-pagina-del-proyecto-devorador" class="anchor" href="#bienvenido-a-la-pagina-del-proyecto-devorador" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bienvenido a la pagina del proyecto "Devorador"</h3>
 
 <p>El objetivo principal del  juego es un personaje, que atrape diferentes tipos de frutas y evite los obstáculos, el juego se desenvolverá en 2 escenarios distintos. Al inicio del juego contara con 3 vidas y tendrá que juntar 400 puntos para poder cambiar de escenario. </p>
@@ -28,18 +37,18 @@
 <a id="descripción" class="anchor" href="#descripci%C3%B3n" aria-hidden="true"><span class="octicon octicon-link"></span></a>Descripción</h3>
 
 <p>En el escenario 1, el personaje se moverá horizontalmente de izquierda a derecha, ya que en este escenario las frutas que tendrá que atrapar se moverán de forma ascendente y descendente. 
-Cada objeto se moverá de forma distinta por la pantalla:
-Objetos | Imágenes
------------- | -------------
-<strong>Plátano</strong>: Descenderá, pero a diferentes velocidades. (Valor: 10 puntos) | ! <a href="https://raw.githubusercontent.com/objetos15161/Devorador/master/Proyecto/images/hamburguesa.png">Platano</a>
-Formato: <a href="url">Alt Texto</a>
-<strong>Manzana</strong>: Lo hará de forma ascendente pero dependiendo de su punto de partida, lo hará en forma de escalera. (Valor: 20 puntos)                                                                    | Contenido en la segunda columna
+Cada objeto se moverá de forma distinta por la pantalla:</p>
+
+<p><strong>Plátano</strong>: Descenderá, pero a diferentes velocidades. (Valor: 10 puntos) 
+ ! <a href="https://raw.githubusercontent.com/objetos15161/Devorador/master/Proyecto/images/hamburguesa.png">Platano</a></p>
+
+<p><strong>Manzana</strong>: Lo hará de forma ascendente pero dependiendo de su punto de partida, lo hará en forma de escalera. (Valor: 20 puntos)<br>
 <strong>Fresa</strong>: Esta fruta tendrá el efecto de aparecer y desaparecer en diferentes puntos dentro del área de juego. 
 A la vez tendrá que esquivar comida chatarra que le podrán restar puntos u otras que le quitaran vidas.
-(Valor: 40 puntos) | 
-<strong>Hamburguesa</strong>: Esta comida se moverá en forma de zigzag ascendentemente y le quitara una vida si la atrapa.|</p>
+(Valor: 40 puntos) 
+<strong>Hamburguesa</strong>: Esta comida se moverá en forma de zigzag ascendentemente y le quitara una vida si la atrapa.</p>
 
-<p><strong>Pizza</strong>: Esta comida se moverá en forma de descendentemente, apareciendo y desapareciendo en cualquier punto de la pantalla, y le restara 5 puntos.|</p>
+<p><strong>Pizza</strong>: Esta comida se moverá en forma de descendentemente, apareciendo y desapareciendo en cualquier punto de la pantalla, y le restara 5 puntos.</p>
 
 <p>En el escenario 2, una vez que el jugador ha realizado sus compras en el supermercado, ahora tiene que llegar a su casa por un camino lleno de obstáculos. Este escenario tendrá efecto de scroll por lo cual el personaje solo avanzara hacia la derecha y a lo largo del camino volverá a encontrara diferentes objetos como:  </p>
 
@@ -68,14 +77,24 @@ A la vez tendrá que esquivar comida chatarra que le podrán restar puntos u otr
 <a id="documentacion" class="anchor" href="#documentacion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentacion</h3>
 
 <p>-<a href="http://www.gliffy.com/go/publish/9244067">Diagrama de clases UML</a></p>
+        </section>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/objetos15161/Devorador">Devorador</a> is maintained by <a href="https://github.com/objetos15161">objetos15161</a>.</span>
+        <aside id="sidebar">
+          <a href="https://github.com/objetos15161/Devorador/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/objetos15161/Devorador/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+          <p class="repo-owner"><a href="https://github.com/objetos15161/Devorador"></a> is maintained by <a href="https://github.com/objetos15161">objetos15161</a>.</p>
 
-    </section>
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
 
   
   </body>
