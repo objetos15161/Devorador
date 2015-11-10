@@ -16,7 +16,7 @@ public class Platano extends Comida
     {
         this.setRotation(-90);
          move(5);
-         checaPlatano(); 
+         checaPlatano();
     }  
     public void checaPlatano()
     { //  x getWidth();
@@ -25,7 +25,7 @@ public class Platano extends Comida
         world = getWorld();
         int y = getY();
         int alto = world.getHeight();
-         if(y == alto-500)
+       if(y == alto-500)
            world.removeObject(this);
        
     }
