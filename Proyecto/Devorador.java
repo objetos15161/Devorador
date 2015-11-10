@@ -32,27 +32,17 @@ public class Devorador extends Actor
     private GreenfootImage abajo3;
     private GreenfootImage arri1;
     private GreenfootImage arri2;
-
-    private Counter puntos;
-    private Counter vidas;
-
-
-//    private Counter counter;
+    
+    private int puntos=0;
+    private Counter counter;
 
     
-
     /**
      * Act - do whatever the Jack wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-
-public Devorador(int numPuntos, int numVidas)
-{     puntos= new Counter("Puntos: ");
-      puntos.setValue(numPuntos);
-      
-     vidas  = new Counter("Vidas: ");
-     vidas.setValue(numVidas);//set cambiar el valor del letrero
-
+public Devorador(Counter counterPuntos)
+{
     paradoI=new GreenfootImage("parado.png"); 
     der1=new GreenfootImage("der1.png"); 
     der2=new GreenfootImage("der2.png"); 
@@ -68,29 +58,28 @@ public Devorador(int numPuntos, int numVidas)
     avanza=0;
     direccion=IZQUIERDA;
     
-
+    counter= counterPuntos;
     
 }
 
-//se agrega las vidas al mundo cuando se crea la rana
-     protected void addedToWorld(World mundo)
-    {//cuando estasen otro ojeto para hacer referencia al  mundo
-      World world;
-      world = getWorld();//Regreso al mundo que este actor vive.
-      int ancho = world.getWidth();//toma el tamaño
-      
-      mundo.addObject(puntos,(ancho/10),10);
-      mundo.addObject(vidas,(ancho/2),10);
-    }
+/*protected void addedToWorld(World mundo)
+    {
+        //World mundo = getWorld();
+        mundo.addObject(counter,45,15);  
+    }*/
     public void act() 
-    { 
+    {
        move();
-       validaP();
        caminar();
     }    
+    
 
+    
+    public void metodoZ()
+    {
+    }
+    
       public void move()
-
     {
       if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("left")){
         paradoB=false;
@@ -149,7 +138,11 @@ public Devorador(int numPuntos, int numVidas)
                     else{if(this.direccion==DERECHA)
                          paradoI=der2;
                         }
-  
+                    
+                    /* if(this.direccion==ARRIBA)
+                      paradoI=arri2;
+                    else{if(this.direccion==ABAJO)
+                           paradoI=abajo2;}*/
              break;  
             
             case 1: if(this.direccion==IZQUIERDA)
@@ -160,13 +153,23 @@ public Devorador(int numPuntos, int numVidas)
                         if(this.direccion==DERECHA)
                           paradoI=der1;
                         }
-
+                  /*if(this.direccion==ARRIBA)
+                         paradoI=arri1;
+                    else{if(this.direccion==ABAJO)
+                          paradoI=abajo3; 
+                        }*/
             break;
              case 2: if(this.direccion==IZQUIERDA)
                          paradoI=izq2;
                     else{if(this.direccion==DERECHA)
                           paradoI=der2;
-                        }         
+                        }
+                       
+                 /* if(this.direccion==ARRIBA)
+                         paradoI=arri2;
+                    else{if(this.direccion==ABAJO)
+                          paradoI=abajo1;}*/
+                        
             break;
          }
        }
@@ -181,25 +184,28 @@ public Devorador(int numPuntos, int numVidas)
         }
         avanzaJack(); 
     }
-     public void validaP()
-   {  
-       if(this.isTouching(Platano.class)) {
-         
-           Greenfoot.playSound("c.wav");
-           puntos.setValue(puntos.getValue()+1);
+    
+    public void sumarPuntos()
+    { 
+        if(isTouching(Platano.class))
+        {
+            //counter.add(10); 
+    
+            counter.add(10);
         }
-       if(this.isTouching(Fresa.class)){
-           Greenfoot.playSound("c.wav");
-           puntos.setValue(puntos.getValue()+10);
+        
+        if(isTouching(Manzana.class))
+        {
+            //counter.setValue(counter.getValue()+20); 
+            counter.add(20);
         }
-        if(this.isTouching(Manzana.class)){
-             Greenfoot.playSound("c.wav");
-          puntos.setValue(puntos.getValue()+20);
-        }  
-        if(this.isTouching(Pizza.class)){
-             Greenfoot.playSound("come.wav");
-           vidas.setValue(vidas.getValue()-1);
-        }  
+        
+        if(isTouching(Fresa.class))
+       {
+            
+            //counter.setValue(counter.getValue()+40); 
+            counter.add(40);
+        }
+        
     }
 }
-

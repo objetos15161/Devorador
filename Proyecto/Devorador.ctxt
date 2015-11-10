@@ -1,11 +1,12 @@
 #BlueJ class context
-comment0.params=numPuntos\ numVidas
-comment0.target=Devorador(int,\ int)
+comment0.params=counterPuntos
+comment0.target=Devorador(Counter)
 comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Jack\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment1.params=mundo
-comment1.target=void\ addedToWorld(greenfoot.World)
+comment1.params=
+comment1.target=void\ act()
+comment1.text=protected\ void\ addedToWorld(World\ mundo)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ //World\ mundo\ \=\ getWorld();\r\n\ \ \ \ \ \ \ \ mundo.addObject(counter,45,15);\ \ \r\n}
 comment2.params=
-comment2.target=void\ act()
+comment2.target=void\ metodoZ()
 comment3.params=
 comment3.target=void\ move()
 comment4.params=
@@ -14,5 +15,5 @@ comment4.text=\r\n\ \u00C9ste\ m\u00E9todo\ verifica\ si\ el\ ladron\ esta\ para
 comment5.params=
 comment5.target=void\ caminar()
 comment6.params=
-comment6.target=void\ validaP()
+comment6.target=void\ sumarPuntos()
 numComments=7
