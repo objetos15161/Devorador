@@ -187,12 +187,12 @@ public Devorador(int numPuntos, int numVidas)
        if(this.isTouching(Platano.class)) {
            removeTouching(Platano.class);
            Greenfoot.playSound("c.wav");
-           puntos.setValue(puntos.getValue()+1);
+           puntos.setValue(puntos.getValue()+10);
         }
        if(this.isTouching(Fresa.class)){
            removeTouching(Fresa.class);
            Greenfoot.playSound("c.wav");
-           puntos.setValue(puntos.getValue()+10);
+           puntos.setValue(puntos.getValue()+50);
         }
         if(this.isTouching(Manzana.class)){
             removeTouching(Manzana.class);
@@ -202,10 +202,11 @@ public Devorador(int numPuntos, int numVidas)
         if(this.isTouching(Pizza.class)){
             
              Greenfoot.playSound("come.wav");
-           vidas.setValue(vidas.getValue()-10);
+          // vidas.setValue(vidas.getValue()-10);
+             puntos.setValue(puntos.getValue()-5);
            this.setLocation(world.getWidth()/2,world.getHeight()-30);
            setImage("muerto1.png");
-           Greenfoot.delay(40);
+           Greenfoot.delay(20);
         }  
        
     }

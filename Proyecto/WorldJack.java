@@ -46,7 +46,7 @@ public class WorldJack extends World
              creaPlatano();
           
             }
-        if ( Greenfoot.getRandomNumber(1000) < 3 )
+        if ( Greenfoot.getRandomNumber(1000) < 20)
             { 
             creaManzana();
           
