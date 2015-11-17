@@ -83,9 +83,9 @@ public class Devorador extends Actor
         world = getWorld();
         //int ancho = world.getWidth();//toma el tamaño
 
-        mundo.addObject(puntos,745,87);
-        mundo.addObject(vidas,745,55);
-        mundo.addObject(nivel,745,20);
+        mundo.addObject(puntos,60,30);
+        mundo.addObject(vidas,230,30);
+        mundo.addObject(nivel,400,30);
     }
 
     public void act() 

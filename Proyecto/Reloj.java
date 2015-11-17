@@ -24,7 +24,7 @@ public class Reloj extends Actor
     
     protected void addedToWorld(World mundo)
     {
-       mundo.addObject(valor,745,120);
+       mundo.addObject(valor,700,30);
     }
     
     /**
