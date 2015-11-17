@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Manzana\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.params=
+comment1.target=void\ checaManzana()
+comment2.params=
+comment2.target=void\ mueveManzana()
+comment3.params=
+comment3.target=void\ acumulaPuntos()
+comment3.text=\r\n\ Este\ metodo\ va\ acumulando\ los\ puntos\ que\ lleva\ el\ ladron\ segun\ sea\ el\ valor\ de\ la\ Fresa\r\n\ \r\n
+numComments=4

@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Devorador()
+comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Jack\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.params=mundo
+comment1.target=void\ addedToWorld(greenfoot.World)
+comment1.text=\r\n\ \ \ \ Este\ metodo\ agrega\ los\ contadores\ de\ nivel,\ puntos\ y\ vidas\ al\ mundo\r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ move()
+comment4.params=
+comment4.target=void\ avanzaJack()
+comment4.text=\r\n\ \u00C9ste\ m\u00E9todo\ verifica\ si\ el\ ladron\ esta\ parado\ o\ caminando\ con\ la\ variable\ booleana\ parado.\ Se\ verifica\ su\r\n\ direcci\u00F3n\ y\ movimiento\ y\ se\ cambia\ por\ la\ imagen\ que\ le\ corresponda\ para\ cuando\ se\ presione\r\n\ una\ tecla\ se\ vea\ que\ el\ personaje\ camina\r\n
+comment5.params=
+comment5.target=void\ caminar()
+comment6.params=
+comment6.target=void\ validaFruta()
+comment6.text=\r\n\ \u00C9ste\ m\u00E9todo\ verifica\ si\ el\ Devorador\ esta\ "devorando"\ frutas,\ asi\ mismo\ agrega\ sonidos\ y\ suma\ puntos\r\n
+comment7.params=
+comment7.target=void\ validaComidaCha()
+comment7.text=\r\n\ \u00C9ste\ m\u00E9todo\ verifica\ si\ el\ Devorador\ esta\ "devorando"\ comida\ chatarra,\ asi\ mismo\ agrega\ sonidos\ y\ resta\ puntos\ o\ vidas\ segun\ sea\ el\ caso\ \r\n
+comment8.params=
+comment8.target=void\ checaVidas()
+comment9.params=
+comment9.target=void\ incNivel()
+numComments=10
