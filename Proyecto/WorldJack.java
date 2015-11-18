@@ -11,12 +11,10 @@ import greenfoot.*;
  */
 public class WorldJack extends World
 {
-    private Fresa f;
-    private Manzana m;
-    private Platano p;
-    private Reloj reloj;
+   
+   private Reloj reloj;
     private Devorador jack;
-    private Hamburguesa h;
+
     // private SimpleTimer tiempo;
     private Counter vidas, puntos;
     //private GreenfootSound sonido;
@@ -30,8 +28,10 @@ public class WorldJack extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800,500, 1); 
+       
         setPaintOrder(Devorador.class,Fresa.class,Manzana.class,Platano.class,Pizza.class,Hamburguesa.class);
         prepara();
+        
         //vidas=new Counter("Vidas: ");
         //vidas.setValue(5);
         //addObject(vidas,250,30);
@@ -40,19 +40,6 @@ public class WorldJack extends World
         //addObject(puntos,30,30);
         //sonido=new GreenfootSound(".mp3");
 
-        prepare();
-        
-       /** if((Devorador)nivel.getValue()==2)
-        {
-            removeObjects(getObjects(Fresa.class));
-            removeObjects(getObjects(Manzana.class));
-            removeObjects(getObjects(Platano.class));
-            removeObjects(getObjects(Pizza.class));
-            removeObjects(getObjects(Hamburguesa.class));
-            setBackground("nivel2.jpg");
-            
-        }*/
-      
 
     }
 
@@ -61,7 +48,8 @@ public class WorldJack extends World
      * Esta creando siempre la fruta en diferentes lugares.
      */
     public void act()
-    {
+    {   
+       
         creaComida();
     }
 
@@ -71,22 +59,22 @@ public class WorldJack extends World
      */
     public void creaComida(){
 
-        if ( Greenfoot.getRandomNumber(1000) < 30 ){ 
+        if ( Greenfoot.getRandomNumber(1000) < 20 ){ 
             creaPlatano();
 
         }
-        if ( Greenfoot.getRandomNumber(1000) < 3 )
+        if ( Greenfoot.getRandomNumber(1000) < 5 )
         { 
             creaManzana();
 
         }
 
-        if ( Greenfoot.getRandomNumber(1000) < 30)
+        if ( Greenfoot.getRandomNumber(1000) < 10)
         { 
             creaPizza();
         }
         
-        if ( Greenfoot.getRandomNumber(1000) < 5)
+        if ( Greenfoot.getRandomNumber(1000) < 10)
         { 
             creaHamburguesa();
         }
@@ -102,7 +90,7 @@ public class WorldJack extends World
         int x= getWidth();
         int y= getHeight();
         Devorador jack = new Devorador();
-        Exit e = new Exit(); 
+       // Exit e = new Exit(); 
         Selve selve = new Selve();
         Selve selve1 = new Selve();
         Selve selve2 = new Selve();
@@ -114,7 +102,7 @@ public class WorldJack extends World
         Fresa str2= new Fresa();
         reloj=new Reloj();
 
-        addObject(reloj,getWidth()-50,30);
+        addObject(reloj,getWidth()-30,20);
         addObject(jack,(getWidth()/2),getHeight()-250);
         addObject(selve,750,480);
         addObject(selve1,650,480);
@@ -122,7 +110,7 @@ public class WorldJack extends World
         addObject(selve3,60,480);
         addObject(selve4,160,480);
         addObject(selve5,260,480);
-        addObject(e,getWidth()-780,250);
+      //  addObject(e,getWidth()-780,250);
 
         addObject(str, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
         addObject(str1, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
@@ -161,29 +149,7 @@ public class WorldJack extends World
 
     }
 
-    /**
-     * Regresa al objeto de la clase Devorador para poder acceder a sus métodos
-     * @return Devorador   (un objeto de la clase Devorador)
-     */
-    public Devorador getDevorador()
-    {
-        return jack;
-    }
 
-    public Fresa getFresa()
-    {
-        return f;
-    }
-
-    public Manzana getManzana()
-    {
-        return m;
-    }
-
-    public Platano getPlatano()
-    {
-        return p;
-    }
     
     private void creaHamburguesa()
     {
@@ -192,13 +158,9 @@ public class WorldJack extends World
         int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
         addObject(h,x,50);
 
+
     }
     
-    /**
-     * Prepare the world for the start of the program. That is: create the initial
-     * objects and add them to the world.
-     */
-    private void prepare()
-    {
-    }
 }
+    
+  

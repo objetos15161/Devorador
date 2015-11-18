@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=WorldMenu()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ WorldMenu.\r\n\ \r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Invoca\ a\ los\ m\u00E9todos\ del\ BurglarMenu\r\n
+comment2.params=
+comment2.target=void\ verifica()
+numComments=3

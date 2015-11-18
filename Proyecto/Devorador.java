@@ -83,9 +83,9 @@ public class Devorador extends Actor
         world = getWorld();
         //int ancho = world.getWidth();//toma el tamaño
 
-        mundo.addObject(puntos,60,30);
-        mundo.addObject(vidas,230,30);
-        mundo.addObject(nivel,400,30);
+        mundo.addObject(puntos,55,20);
+        mundo.addObject(vidas,290,20);
+        mundo.addObject(nivel,490,20);
     }
 
     public void act() 
@@ -95,6 +95,7 @@ public class Devorador extends Actor
         validaFruta();
         validaComidaCha();
         checaVidas();
+        validaciones();
     }    
 
     public void move()
@@ -238,8 +239,8 @@ public class Devorador extends Actor
             removeTouching(Hamburguesa.class);
             Greenfoot.playSound("come.wav");
             vidas.setValue(vidas.getValue()-1);
-            this.setLocation(world.getWidth()/2,world.getHeight()-30);
-            setImage("muerto1.png");
+          //  this.setLocation(world.getWidth()/2,world.getHeight()-30);
+            setImage("salto.png");
             Greenfoot.delay(40);
         }  
         
@@ -263,6 +264,34 @@ public class Devorador extends Actor
         {
             nivel.setValue(nivel.getValue()+1);
         }
+    }
+    
+    /**
+     * Este método contiene las validaciones necesarias para que el Jugador no pase el limite 
+     * y que no pase las clases Counter y Selve
+     */
+    public void validaciones()
+    {
+        if(this.isTouching(Counter.class) || this.isTouching(Selve.class)){
+           
+        if(Greenfoot.isKeyDown("up")){ 
+          setLocation(getX(),getY()+ABAJO);
+        }
+          
+        if(Greenfoot.isKeyDown("down")){
+         setLocation(getX(),getY()+ARRIBA);
+        }
+         
+        if(Greenfoot.isKeyDown("right")){
+          setLocation(getX()+IZQUIERDA,getY());
+        }
+          
+        if(Greenfoot.isKeyDown("left")){
+          setLocation(getX()+DERECHA,getY());
+        }
+        }
+
+              
     }
             
 
