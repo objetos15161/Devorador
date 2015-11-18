@@ -13,7 +13,7 @@ public class JugarBoton extends Actor
    */
   public JugarBoton()
   {
-      botonJugar=new GreenfootImage("jugar.png");
+      botonJugar=new GreenfootImage("JUGAR.jpg");
       setImage(botonJugar);
     }
 }
