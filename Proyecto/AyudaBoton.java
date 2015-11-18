@@ -14,7 +14,7 @@ public class AyudaBoton extends Actor
    */
   public AyudaBoton()
   {
-      botonAyuda=new GreenfootImage("AYUDA.jpg");
+      botonAyuda=new GreenfootImage("ayudabot.jpg");
       setImage(botonAyuda);
     }  
 }

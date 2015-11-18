@@ -52,6 +52,15 @@ public class WorldMenu extends World
                 //Greenfoot.delay(10);
                 Greenfoot.setWorld(new WorldJack());
             }
+             
+            if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == ayuda){
+               // clic.jugar();
+             
+             //  setImage("jugar2.png");
+             // Greenfoot.delay(40);
+                //Greenfoot.delay(10);
+                Greenfoot.setWorld(new WorldAyuda());
+            }
     }
     
 
