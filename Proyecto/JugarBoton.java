@@ -7,7 +7,8 @@ import greenfoot.*;
  * @version (a version number or a date)
  */
 public class JugarBoton extends Actor
-{     private GreenfootImage botonJugar;
+{     
+   private GreenfootImage botonJugar;
    /**
    * constructor de la clase Jugar
    */

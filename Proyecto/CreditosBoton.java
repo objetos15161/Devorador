@@ -8,12 +8,14 @@ import greenfoot.*;
  */
 public class CreditosBoton extends Actor
 {
-    /**
-     * Act - do whatever the CreditosBoton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+  private GreenfootImage botonC;
+  
+   /**
+   * constructor de la clase Jugar
+   */
+  public CreditosBoton()
+  {
+      botonC=new GreenfootImage("CREDITOS.jpg");
+      setImage(botonC);
+    }  
 }
