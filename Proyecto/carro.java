@@ -6,7 +6,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class carro extends Vehiculo
+public class Carro extends Vehiculo
 {
     /**
      * Act - do whatever the carro wants to do. This method is called whenever
@@ -14,6 +14,20 @@ public class carro extends Vehiculo
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        removeScreen();
+        move(-3);
+    } 
+    
+    public void removeScreen()
+    {
+        World world;
+        world = getWorld();
+        int x = getX();
+        //int worldWidth = world.getWidth();
+       
+       if(x<=0)
+       {
+           world.removeObject(this);
+       }
+    }
 }

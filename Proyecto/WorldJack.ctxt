@@ -5,21 +5,28 @@ comment0.text=\r\n\ EL\ constructor\ de\ la\ clase\ WorldJack.\ Se\ crea\ el\ es
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Esta\ creando\ siempre\ la\ fruta\ en\ diferentes\ lugares.\r\n
+comment10.params=
+comment10.target=void\ creaAutobus()
 comment2.params=
-comment2.target=void\ creaComida()
+comment2.target=void\ primerNivel()
 comment2.text=\r\n\ Este\ m\u00E9todo\ coloca\ aleatoriamente\ en\ \ lugares\ del\ mundo\ los\r\n\ objetos\ Platano,Manzana,Pizza\ y\ Hamburguesa.\r\n
 comment3.params=
-comment3.target=void\ prepara()
-comment3.text=\r\n\ \ El\ m\u00E9todo\ prepara\ coloca\ los\ objetos\ fijos\ como\ son\ los\ estantes\ de\ fruta\ y\ la\ poscicion\ inicial\ de\ el\ Devorador.\r\n\ \ \ \ Tambi\u00E9n\ se\ crean\ aleatoriamente\ la\ clase\ Fresa,\ fija\ la\ poscicion\ de\ objeto\ Reloj\ y\ Exit.\ \ \r\n\ \ \ \ Los\ agrega\ al\ WorldJack.\r\n
+comment3.target=void\ segundoNivel()
 comment4.params=
-comment4.target=void\ creaPlatano()
-comment4.text=\r\n\ Crea\ el\ Objeto\ Platano\ aleatoriamente\ sobre\ el\ ancho\ del\ mundo\ x\=0,\ y\ a\ una\ altura\ de\ \ y\=460.\r\n
+comment4.target=void\ preparaMundo()
+comment4.text=\r\n\ \ El\ m\u00E9todo\ prepara\ coloca\ los\ objetos\ fijos\ como\ son\ los\ estantes\ de\ fruta\ y\ la\ posicion\ inicial\ de\ el\ Devorador.\r\n\ \ \ \ Tambi\u00E9n\ se\ crean\ aleatoriamente\ la\ clase\ Fresa,\ fija\ la\ posicion\ de\ objeto\ Reloj\ y\ Exit.\ \ \r\n\ \ \ \ Los\ agrega\ al\ WorldJack.\r\n
 comment5.params=
-comment5.target=void\ creaManzana()
-comment5.text=\ \r\n\ Crea\ el\ Objeto\ Manzana\ aleatoriamente\ \ sobre\ en\ x\=0\ y\ y\=50\ en\ el\ WorldJack\r\n
+comment5.target=void\ creaPlatano()
+comment5.text=\r\n\ Crea\ el\ Objeto\ Platano\ aleatoriamente\ sobre\ el\ ancho\ del\ mundo\ x\=0,\ y\ a\ una\ altura\ de\ \ y\=460.\r\n
 comment6.params=
-comment6.target=void\ creaPizza()
-comment6.text=\r\n\ Crea\ el\ Objeto\ Pizza\ aleatoriamente\ sobre\ y.\r\n
+comment6.target=void\ creaManzana()
+comment6.text=\ \r\n\ Crea\ el\ Objeto\ Manzana\ aleatoriamente\ \ sobre\ en\ x\=0\ y\ y\=50\ en\ el\ WorldJack\r\n
 comment7.params=
-comment7.target=void\ creaHamburguesa()
-numComments=8
+comment7.target=void\ creaPizza()
+comment7.text=\r\n\ Crea\ el\ Objeto\ Pizza\ aleatoriamente\ sobre\ y.\r\n
+comment8.params=
+comment8.target=void\ creaHamburguesa()
+comment8.text=\r\n\ Crea\ el\ Objeto\ Hamburguesa\ aleatoriamente\ sobre\ x.\r\n
+comment9.params=
+comment9.target=void\ creaCarro()
+numComments=11

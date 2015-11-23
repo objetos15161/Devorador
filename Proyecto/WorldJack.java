@@ -13,11 +13,9 @@ public class WorldJack extends World
 {
    
    private Reloj reloj;
-    private Devorador jack;
+   private Devorador jack;
+ 
 
-    // private SimpleTimer tiempo;
-    private Counter vidas, puntos;
-    //private GreenfootSound sonido;
 
     /**
      * EL constructor de la clase WorldJack. Se crea el escenario el orden de las clases, el tamaño del entorno,
@@ -30,14 +28,7 @@ public class WorldJack extends World
         super(800,500, 1); 
        
         setPaintOrder(Devorador.class,Fresa.class,Manzana.class,Platano.class,Pizza.class,Hamburguesa.class);
-        prepara();
-        
-        //vidas=new Counter("Vidas: ");
-        //vidas.setValue(5);
-        //addObject(vidas,250,30);
-        //puntos=new Counter("Puntos: ");
-        //puntos.setValue(0);
-        //addObject(puntos,30,30);
+        preparaMundo();
         //sonido=new GreenfootSound(".mp3");
 
 
@@ -49,47 +40,84 @@ public class WorldJack extends World
      */
     public void act()
     {   
-       
-        creaComida();
+       switch (jack.getNivel())
+       {
+           case 1:
+                 primerNivel();
+                 break;
+           case 2:
+                 segundoNivel();
+                 break;    
+        }
     }
 
     /**
      * Este método coloca aleatoriamente en  lugares del mundo los
      * objetos Platano,Manzana,Pizza y Hamburguesa.
      */
-    public void creaComida(){
+    public void primerNivel(){
 
-        if ( Greenfoot.getRandomNumber(1000) < 20 ){ 
+        if ( Greenfoot.getRandomNumber(1000) < 30 ){ 
             creaPlatano();
-
         }
-        if ( Greenfoot.getRandomNumber(1000) < 5 )
+        if ( Greenfoot.getRandomNumber(1000) < 20 )
         { 
             creaManzana();
-
         }
 
-        if ( Greenfoot.getRandomNumber(1000) < 10)
+        if ( Greenfoot.getRandomNumber(1000) < 5)
         { 
             creaPizza();
         }
         
-        if ( Greenfoot.getRandomNumber(1000) < 10)
+        if ( Greenfoot.getRandomNumber(1000) < 4)
         { 
             creaHamburguesa();
         }
     }
+    
+    public void segundoNivel()
+    {
+         //Carro c= new Carro();
+         //Autobus a= new Autobus();
+         Bache b=new Bache();
+         Bache b1=new Bache();
+         Nena n1 = new Nena();
+         setBackground("fondo1.png");
+         setPaintOrder(Autobus.class,Carro.class,Devorador.class);  
+         removeObjects(getObjects(Fresa.class));
+         removeObjects(getObjects(Manzana.class));
+         removeObjects(getObjects(Platano.class));
+         removeObjects(getObjects(Pizza.class));
+         removeObjects(getObjects(Hamburguesa.class));
+         removeObjects(getObjects(Selve.class));
+          addObject(b,300,300);
+          addObject(b1,700,400);
+          addObject(n1,400,400);
 
+        if(Greenfoot.getRandomNumber(1000) < 8 )
+        { 
+            creaCarro();
+        }
+        
+        if(Greenfoot.getRandomNumber(1000) < 5 )
+        { 
+            creaAutobus();
+        }
+         
+    }
+        
     /**
-     *  El método prepara coloca los objetos fijos como son los estantes de fruta y la poscicion inicial de el Devorador.
-    También se crean aleatoriamente la clase Fresa, fija la poscicion de objeto Reloj y Exit.  
+     *  El método prepara coloca los objetos fijos como son los estantes de fruta y la posicion inicial de el Devorador.
+    También se crean aleatoriamente la clase Fresa, fija la posicion de objeto Reloj y Exit.  
     Los agrega al WorldJack.
      */
-    public void prepara()
+    public void preparaMundo()
     {  
         int x= getWidth();
         int y= getHeight();
-        Devorador jack = new Devorador();
+        jack = new Devorador(0,3,1);
+        reloj=new Reloj();
        // Exit e = new Exit(); 
         Selve selve = new Selve();
         Selve selve1 = new Selve();
@@ -100,7 +128,7 @@ public class WorldJack extends World
         Fresa str= new Fresa();
         Fresa  str1= new Fresa();
         Fresa str2= new Fresa();
-        reloj=new Reloj();
+        
 
         addObject(reloj,getWidth()-30,20);
         addObject(jack,(getWidth()/2),getHeight()-250);
@@ -149,16 +177,31 @@ public class WorldJack extends World
 
     }
 
-
-    
+    /**
+     * Crea el Objeto Hamburguesa aleatoriamente sobre x.
+     */
     private void creaHamburguesa()
     {
         Hamburguesa h= new Hamburguesa();
         int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
         int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
         addObject(h,x,50);
-
-
+    }
+    
+    private void creaCarro()
+    {
+        Carro c= new Carro();
+        int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
+        int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
+        addObject(c,790,300);
+    }
+    
+    private void creaAutobus()
+    {
+        Autobus a= new Autobus();
+        int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
+        int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
+        addObject(a,790,450);
     }
     
 }

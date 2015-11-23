@@ -40,22 +40,24 @@ public class Devorador extends Actor
     private Counter vidas;
     /**contiene el nivel en el que se encuentra el jugador*/
     private Counter nivel;
-
+    
+    private int flag=0;
+    
     /**
      * Act - do whatever the Jack wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
 
-    public Devorador()
+    public Devorador(int numPuntos,int numVidas,int numNivel)
     {     
         puntos= new Counter("Puntos: ");
-        puntos.setValue(0);
+        puntos.setValue(numPuntos);//set cambiar el valor del letrero
 
         vidas  = new Counter("Vidas: ");
-        vidas.setValue(3);//set cambiar el valor del letrero
+        vidas.setValue(numVidas);
 
         nivel  = new Counter("Nivel: ");
-        nivel.setValue(1);//set cambiar el valor del letrero
+        nivel.setValue(numNivel);       //set cambiar el valor del letrero
 
         paradoI=new GreenfootImage("parado.png"); 
         der1=new GreenfootImage("der1.png"); 
@@ -74,15 +76,12 @@ public class Devorador extends Actor
     }
 
     /**
-    Este metodo agrega los contadores de nivel, puntos y vidas al mundo
+     * Este metodo agrega los contadores de nivel, puntos y vidas al mundo cuando se
+     * crea el Jugador de nombre Devorador
      */
 
-    protected void addedToWorld(World mundo)
+    protected void addedToWorld(World mundo)//Jack
     {
-        World world;
-        world = getWorld();
-        //int ancho = world.getWidth();//toma el tamaño
-
         mundo.addObject(puntos,55,20);
         mundo.addObject(vidas,290,20);
         mundo.addObject(nivel,490,20);
@@ -94,8 +93,10 @@ public class Devorador extends Actor
         caminar();
         validaFruta();
         validaComidaCha();
+        validaVehiculos();
         checaVidas();
         validaciones();
+        aumentaNivel();
     }    
 
     public void move()
@@ -190,83 +191,7 @@ public class Devorador extends Actor
         }
         avanzaJack(); 
     }
-
      /**
-     * Éste método verifica si el Devorador esta "devorando" frutas, asi mismo agrega sonidos y suma puntos
-     */   
-    public void validaFruta()
-    { 
-
-        if(this.isTouching(Platano.class)){
-            // ((WorldJack)(getWorld())).getPlatano().acumulaPuntos();
-            removeTouching(Platano.class);
-            Greenfoot.playSound("c.wav");
-            puntos.setValue(puntos.getValue()+10);
-        }
-        if(this.isTouching(Fresa.class)){
-            //((WorldJack)(getWorld())).getFresa().acumulaPuntos();
-            removeTouching(Fresa.class);
-            Greenfoot.playSound("c.wav");
-            puntos.setValue(puntos.getValue()+20);
-        }
-        if(this.isTouching(Manzana.class)){
-            //((WorldJack)(getWorld())).getManzana().acumulaPuntos();
-            removeTouching(Manzana.class);
-            Greenfoot.playSound("c.wav");
-            puntos.setValue(puntos.getValue()+40);
-        }  
-    }
-    
-    /**
-     * Éste método verifica si el Devorador esta "devorando" comida chatarra, asi mismo agrega sonidos y resta puntos o vidas segun sea el caso 
-     */  
-    public void validaComidaCha()
-    {
-        if(this.isTouching(Pizza.class)){
-            World world;
-            world=getWorld();
-            removeTouching(Pizza.class);
-            Greenfoot.playSound("come.wav");
-            puntos.setValue(puntos.getValue()-5);
-            this.setLocation(world.getWidth()/2,world.getHeight()-30);
-            setImage("muerto1.png");
-            Greenfoot.delay(40);
-        }  
-        
-        if(this.isTouching(Hamburguesa.class)){
-            World world;
-            world=getWorld();
-            removeTouching(Hamburguesa.class);
-            Greenfoot.playSound("come.wav");
-            vidas.setValue(vidas.getValue()-1);
-          //  this.setLocation(world.getWidth()/2,world.getHeight()-30);
-            setImage("salto.png");
-            Greenfoot.delay(40);
-        }  
-        
-    }
-    
-    public void checaVidas()
-    {
-        if((vidas.getValue())==0)
-        {
-          World world;
-          world = getWorld();
-        
-          world.addObject(new Perdiste(),400,240);
-          Greenfoot.stop();
-        }
-    }
-    
-    public void incNivel()
-    {
-        if((puntos.getValue())==400)
-        {
-            nivel.setValue(nivel.getValue()+1);
-        }
-    }
-    
-    /**
      * Este método contiene las validaciones necesarias para que el Jugador no pase el limite 
      * y que no pase las clases Counter y Selve
      */
@@ -293,24 +218,131 @@ public class Devorador extends Actor
 
               
     }
-            
 
+     /**
+     * Éste método verifica si el Devorador esta "devorando" frutas, asi mismo agrega sonidos y suma puntos
+     */   
+    public void validaFruta()
+    { 
+
+        if(this.isTouching(Platano.class)){
+         
+            removeTouching(Platano.class);
+            Greenfoot.playSound("c.wav");
+            puntos.setValue(puntos.getValue()+10);
+        }
+        if(this.isTouching(Fresa.class)){
+           
+            removeTouching(Fresa.class);
+            Greenfoot.playSound("c.wav");
+            puntos.setValue(puntos.getValue()+400);
+         //   puntos.setValue(puntos.getValue()+40);
+        }
+        if(this.isTouching(Manzana.class)){
+           
+            removeTouching(Manzana.class);
+            Greenfoot.playSound("c.wav");
+            puntos.setValue(puntos.getValue()+20);
+        }  
+    }
+    
     /**
-     * Este método contiene un parámetro de tipo entero, el cual se agregará al atributo puntos
-     * del Devorador e ir acumulándolos
-     * @param unosPuntos el valor entero de los puntos para el ladron
-     */
-    //public void setPuntos(int unosPuntos)
-    //{
-    //puntos=unosPuntos;
-    //}
-    /**
-     * Este método regresa el valor entero de los puntos que se hayan acumulado
-     * @return puntos Los puntos que lleva el Devorador
-     */
-    //public int getPuntos()
-    //{
-    //return puntos;
-    //}
+     * Éste método verifica si el Devorador esta "devorando" comida chatarra, asi mismo agrega sonidos y resta puntos o vidas segun sea el caso 
+     */  
+    public void validaComidaCha()
+    {
+        if(this.isTouching(Pizza.class)){
+            World world;
+            world=getWorld();
+            removeTouching(Pizza.class);
+            Greenfoot.playSound("come.wav");
+            
+            puntos.setValue(puntos.getValue()-5);
+            
+            this.setLocation(world.getWidth()/2,world.getHeight()-30);
+            setImage("salto.png");
+            
+            Greenfoot.delay(20);
+        }  
+        
+        if(this.isTouching(Hamburguesa.class)){
+            World world;
+            world=getWorld();
+            removeTouching(Hamburguesa.class);
+            Greenfoot.playSound("come.wav");
+            
+            vidas.setValue(vidas.getValue()-1);
+            
+            this.setLocation(world.getWidth()/2,world.getHeight()-30);
+            setImage("muerto1.png");
+            
+            Greenfoot.delay(20);
+        }  
+    }
+    
+    public void validaVehiculos()
+    {
+        if(this.isTouching(Carro.class)){
+            World world;
+            world=getWorld();
+            removeTouching(Carro.class);
+            //Greenfoot.playSound("come.wav");
+            
+            vidas.setValue(vidas.getValue()-1);
+            
+           //this.setLocation(world.getWidth()/2,world.getHeight()-30);
+            setImage("muerto.png");
+            
+            Greenfoot.delay(20);
+        } 
+        
+       if(this.isTouching(Autobus.class)){
+            World world;
+            world=getWorld();
+            removeTouching(Autobus.class);
+            //Greenfoot.playSound("come.wav");
+            
+            //vidas.setValue(0);
+             vidas.setValue(vidas.getValue()-1);
+            //this.setLocation(world.getWidth()/2,world.getHeight()-30);
+            setImage("muerto.png");
+           
+            Greenfoot.delay(20);
+        }
+    }
+    
+    public void checaVidas()
+    {
+        if((vidas.getValue())==0)
+        {
+          World world;
+          world = getWorld();
+        
+          world.addObject(new Perdiste(),400,240);
+          Greenfoot.stop();
+        }
+    }
+   
+    
+    public int getNivel()
+    {
+        return nivel.getValue();
+    }
+       
+    public int getPuntos()
+    {
+        return puntos.getValue();
+    }
+   
+    public void aumentaNivel()
+    {
+        if(flag==0&&(puntos.getValue())>=400)
+        {  
+            flag=1;
+            nivel.setValue(nivel.getValue()+1);
+            this.setLocation(400,100);
+        }
+    }
+        
 }
 

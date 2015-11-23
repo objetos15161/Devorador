@@ -6,9 +6,9 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Manzana extends Comida
+public class Manzana extends Puntos
 {   
-    int valorManzana;
+ 
     /**
      * Act - do whatever the Manzana wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -17,19 +17,11 @@ public class Manzana extends Comida
     { 
        this.setRotation(90);
        mueveManzana();
-       checaManzana();
+       
+       super.checaLimite();
       
     }
-    public void checaManzana()
-    { //  x getWidth();
-     //  y getHeight();
-        World world;
-        world = getWorld();
-        int y = getY();
-        int alto = world.getHeight();
-       if(y == alto-30)
-           world.removeObject(this);
-    }
+
     public void mueveManzana()
     {   
         
@@ -76,15 +68,6 @@ public class Manzana extends Comida
               this.setLocation(getX(), getY()+5);
             }
         }
-    /**
-     * Este metodo va acumulando los puntos que lleva el ladron segun sea el valor de la Fresa
-     * 
-     */
-     public void acumulaPuntos() 
-    {
-         //int puntos=((WorldJack)(getWorld())).getDevorador().getPuntos();
-         //puntos=puntos+this.valorManzana;
-         //super.acumulaPuntos(puntos);
-    }   
+  
 }
 

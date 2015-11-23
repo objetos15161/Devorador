@@ -14,6 +14,20 @@ public class Autobus extends Vehiculo
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        removeScreen();
+        move(-5);
+    }   
+    
+    public void removeScreen()
+    {
+        World world;
+        world = getWorld();
+        int x = getX();
+        //int worldWidth = world.getWidth();
+       
+       if(x<=0)
+       {
+           world.removeObject(this);
+       }
+    }
 }

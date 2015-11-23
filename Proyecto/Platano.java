@@ -6,9 +6,9 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Platano extends Comida
+public class Platano extends Puntos
 {   
-    int valorPlatano;
+
     /**
      * Act - do whatever the Plantano wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -32,14 +32,5 @@ public class Platano extends Comida
        
     }
    }
-    /**
-     * Este metodo va acumulando los puntos que lleva el ladron segun sea el valor de la Fresa
-     * 
-     */
-     public void acumulaPuntos() 
-    {
-        // int puntos=((WorldJack)(getWorld())).getDevorador().getPuntos();
-         //puntos=puntos+this.valorPlatano;
-         //super.acumulaPuntos(puntos);
-    }  
+
 }
