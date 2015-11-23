@@ -14,7 +14,7 @@ public class WorldJack extends World
    
    private Reloj reloj;
    private Devorador jack;
- 
+   private GreenfootSound musica;
 
 
     /**
@@ -26,9 +26,11 @@ public class WorldJack extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800,500, 1); 
-       
+         
+        musica=new GreenfootSound("Two.mp3");
         setPaintOrder(Devorador.class,Fresa.class,Manzana.class,Platano.class,Pizza.class,Hamburguesa.class);
         preparaMundo();
+        
         //sonido=new GreenfootSound(".mp3");
 
 
@@ -39,7 +41,7 @@ public class WorldJack extends World
      * Esta creando siempre la fruta en diferentes lugares.
      */
     public void act()
-    {   
+    {   musica.playLoop();
        switch (jack.getNivel())
        {
            case 1:
@@ -202,6 +204,35 @@ public class WorldJack extends World
         int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
         int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
         addObject(a,790,450);
+    }
+    /**
+     * Método que detiene la música cuando se termina el juego
+     */
+    public void detenerMusica()
+    {
+       musica.stop();
+       
+    }
+    /**
+     * Método que es llamado por el sistema de Greenfoot cuando se ha iniciado la simulación, y
+     * empieza iniciando el sonido del juego
+     */
+    public void started()
+    {
+        super.started();
+        musica.play();
+        
+    }
+    
+    /**
+     * Método que es llamado por el sistema de Greenfoot cuando se pone en pausa el proyecto, cuando sucede esto 
+     * tambien se pause la canción
+     */
+    public void stopped()
+    {
+        super.stopped();
+        musica.pause();
+        
     }
     
 }
