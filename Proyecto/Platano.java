@@ -16,7 +16,7 @@ public class Platano extends Puntos
     public void act() 
     {
         this.setRotation(-90);
-         move(5);
+         move(3);
          checaPlatano();
    
     }  

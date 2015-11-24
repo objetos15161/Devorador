@@ -12,8 +12,27 @@ public class Nena extends Puntos
      * Act - do whatever the Nena wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+
+   
     public void act() 
     {
-        // Add your action code here.
-    }    
-}
+     // checalimite();
+      //move(3);
+    }
+    
+    public void checalimite()
+    {
+         World world;
+        world = getWorld();
+        int x = getX();
+        //int worldWidth = world.getWidth();
+       
+       if(x>=690)
+       {
+           world.removeObject(this);
+       }
+       
+    }
+}    
+    
+

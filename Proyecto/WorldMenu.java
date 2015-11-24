@@ -13,6 +13,7 @@ public class WorldMenu extends World
     private RecordsBoton records;
     private CreditosBoton creditos;
     private AyudaBoton ayuda;
+
     
     /**
      * Constructor for objects of class WorldMenu.
@@ -22,10 +23,13 @@ public class WorldMenu extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800,600, 1);
+        
         jugar=new JugarBoton();
         ayuda=new AyudaBoton();
         records=new RecordsBoton();
         creditos=new CreditosBoton();
+        
+      
         
         addObject(jugar,getWidth()/4+15,getHeight()/2-120);
         addObject(records,getWidth()/4+15,getHeight()-185);
@@ -45,20 +49,14 @@ public class WorldMenu extends World
         
         if(Greenfoot.getMouseInfo()!=null){ 
             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == jugar){
-               // clic.jugar();
-             
-             //  setImage("jugar2.png");
-             // Greenfoot.delay(40);
-                //Greenfoot.delay(10);
+               Greenfoot.playSound("clickkk.wav");
+               Greenfoot.delay(40);
                 Greenfoot.setWorld(new WorldJack());
             }
              
             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == ayuda){
-               // clic.jugar();
-             
-             //  setImage("jugar2.png");
-             // Greenfoot.delay(40);
-                //Greenfoot.delay(10);
+               Greenfoot.playSound("clickkk.wav");
+               Greenfoot.delay(40);
                 Greenfoot.setWorld(new WorldAyuda());
             }
     }

@@ -8,14 +8,17 @@ import greenfoot.*;
  */
 public class Vehiculo extends Obstaculo
 {
-    /**
-     * Act - do whatever the Vehiculo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+     public void removeScreen()
     {
-        // Add your action code here.
-        
-    }    
+        World world;
+        world = getWorld();
+        int x = getX();
+        //int worldWidth = world.getWidth();
+       
+       if(x<=0)
+       {
+           world.removeObject(this);
+       }
+    }   
 
 }

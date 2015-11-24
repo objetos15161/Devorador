@@ -11,7 +11,7 @@ import greenfoot.*;
  */
 public class WorldJack extends World
 {
-   
+  
    private Reloj reloj;
    private Devorador jack;
    private GreenfootSound musica;
@@ -28,10 +28,11 @@ public class WorldJack extends World
         super(800,500, 1); 
          
         musica=new GreenfootSound("Two.mp3");
+        
         setPaintOrder(Devorador.class,Fresa.class,Manzana.class,Platano.class,Pizza.class,Hamburguesa.class);
         preparaMundo();
         
-        //sonido=new GreenfootSound(".mp3");
+        
 
 
     }
@@ -48,9 +49,14 @@ public class WorldJack extends World
                  primerNivel();
                  break;
            case 2:
+                 
                  segundoNivel();
-                 break;    
+                 break; 
+           case 3:
+                 tercerNivel();
+                 break;
         }
+        
     }
 
     /**
@@ -62,17 +68,17 @@ public class WorldJack extends World
         if ( Greenfoot.getRandomNumber(1000) < 30 ){ 
             creaPlatano();
         }
-        if ( Greenfoot.getRandomNumber(1000) < 20 )
+        if ( Greenfoot.getRandomNumber(1000) < 10 )
         { 
             creaManzana();
         }
 
-        if ( Greenfoot.getRandomNumber(1000) < 5)
+        if ( Greenfoot.getRandomNumber(1000) < 10)
         { 
             creaPizza();
         }
         
-        if ( Greenfoot.getRandomNumber(1000) < 4)
+        if ( Greenfoot.getRandomNumber(1000) < 5)
         { 
             creaHamburguesa();
         }
@@ -80,12 +86,17 @@ public class WorldJack extends World
     
     public void segundoNivel()
     {
-         //Carro c= new Carro();
-         //Autobus a= new Autobus();
+         
+         // cuenta=new SimpleTimer();
          Bache b=new Bache();
          Bache b1=new Bache();
+         Bache b2=new Bache();
+         Bache b3=new Bache();
+         Bache b4=new Bache();
+       
+         
          Nena n1 = new Nena();
-         setBackground("fondo1.png");
+         setBackground("fondo1.jpg");
          setPaintOrder(Autobus.class,Carro.class,Devorador.class);  
          removeObjects(getObjects(Fresa.class));
          removeObjects(getObjects(Manzana.class));
@@ -93,10 +104,26 @@ public class WorldJack extends World
          removeObjects(getObjects(Pizza.class));
          removeObjects(getObjects(Hamburguesa.class));
          removeObjects(getObjects(Selve.class));
-          addObject(b,300,300);
-          addObject(b1,700,400);
-          addObject(n1,400,400);
+          
+         addObject(b,400,300);
+         addObject(b1,700,400);
+         addObject(b2,600,200);
+         addObject(b3,150,200);
+         addObject(b4,80,370);
 
+          addObject(n1,50,450);
+       /*if(Greenfoot.getRandomNumber(1000) < 2 )
+        { 
+            creaNena();
+        }*/
+        
+       /* if(cuenta.millisElapsed()>=100)
+        {
+            creaNena();
+            cuenta.mark();
+            
+          //  segundos++;
+        }*/
         if(Greenfoot.getRandomNumber(1000) < 8 )
         { 
             creaCarro();
@@ -109,6 +136,29 @@ public class WorldJack extends World
          
     }
         
+     public void tercerNivel()
+    {
+       
+         setBackground("fondo2.jpg");
+         //setPaintOrder(Autobus.class,Carro.class,Devorador.class);  
+         removeObjects(getObjects(Carro.class));
+         removeObjects(getObjects(Autobus.class));
+         removeObjects(getObjects(Nena.class));
+         Casa c=new Casa();
+         addObject(c,385,60);
+         
+         if(Greenfoot.getRandomNumber(1000) < 8 )
+        { 
+            creaCarroVerde();
+        }
+        
+        if(Greenfoot.getRandomNumber(1000) < 5 )
+        { 
+            creaCarroAzul();
+        }
+      
+         
+    }
     /**
      *  El método prepara coloca los objetos fijos como son los estantes de fruta y la posicion inicial de el Devorador.
     También se crean aleatoriamente la clase Fresa, fija la posicion de objeto Reloj y Exit.  
@@ -118,7 +168,7 @@ public class WorldJack extends World
     {  
         int x= getWidth();
         int y= getHeight();
-        jack = new Devorador(0,3,1);
+        jack = new Devorador(1,5,1);
         reloj=new Reloj();
        // Exit e = new Exit(); 
         Selve selve = new Selve();
@@ -133,7 +183,7 @@ public class WorldJack extends World
         
 
         addObject(reloj,getWidth()-30,20);
-        addObject(jack,(getWidth()/2),getHeight()-250);
+        addObject(jack,(getWidth()/2),getHeight()-50);
         addObject(selve,750,480);
         addObject(selve1,650,480);
         addObject(selve2,550,480);
@@ -193,9 +243,10 @@ public class WorldJack extends World
     private void creaCarro()
     {
         Carro c= new Carro();
-        int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
-        int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
-        addObject(c,790,300);
+        Carro c2= new Carro();
+       
+        addObject(c,790,210);
+        addObject(c2,790,390);
     }
     
     private void creaAutobus()
@@ -203,8 +254,34 @@ public class WorldJack extends World
         Autobus a= new Autobus();
         int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
         int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
-        addObject(a,790,450);
+        addObject(a,790,300);
     }
+    
+     private void creaNena()
+    {
+        Nena n= new Nena();
+        //int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
+        //int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
+        addObject(n,200,450);
+    }
+    
+      private void creaCarroAzul()
+    {
+        CarroAzul azul= new CarroAzul();
+       
+        addObject(azul,790,300);
+    }
+      private void creaCarroVerde()
+    {
+        CarroVerde verde= new CarroVerde();
+        CarroVerde verde1= new CarroVerde();
+       
+        addObject(verde,790,210);
+        addObject(verde1,790,390);
+    }
+   
+    
+    
     /**
      * Método que detiene la música cuando se termina el juego
      */

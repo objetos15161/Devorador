@@ -32,7 +32,7 @@ public class Hamburguesa extends Obstaculo
     {
         if(getY()>20 && getY()<100 )
             {
-              this.setLocation(getX(), getY()+5);
+              this.setLocation(getX(), getY()+2);
             }
             if(getY()==100)
             {
@@ -41,7 +41,7 @@ public class Hamburguesa extends Obstaculo
              
              if(getY()>=100 && getY()<200 )
             {
-              this.setLocation(getX(), getY()+5);
+              this.setLocation(getX(), getY()+2);
             }
             
              if(getY()==200)
@@ -51,7 +51,7 @@ public class Hamburguesa extends Obstaculo
             
              if(getY()>=200 && getY()<300 )
             {
-              this.setLocation(getX(), getY()+5);
+              this.setLocation(getX(), getY()+2);
             }
             
              if(getY()==300)
@@ -61,7 +61,7 @@ public class Hamburguesa extends Obstaculo
             
              if(getY()>=300 && getY()<400 )
             {
-              this.setLocation(getX(), getY()+5);
+              this.setLocation(getX(), getY()+2);
             }
             if(getY()==400)
             {
@@ -70,7 +70,7 @@ public class Hamburguesa extends Obstaculo
             
             if(getY()>=400 && getY()<480 )
             {
-              this.setLocation(getX(), getY()+5);
+              this.setLocation(getX(), getY()+2);
             }
         
         
