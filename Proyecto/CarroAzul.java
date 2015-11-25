@@ -15,7 +15,7 @@ public class CarroAzul extends Vehiculo
     public void act() 
     {
         // Add your action code here.}
-        super.removeScreen();
+        super.removeVehiculo();
         move(-3);
     }    
 }

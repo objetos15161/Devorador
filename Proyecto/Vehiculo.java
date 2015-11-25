@@ -8,7 +8,7 @@ import greenfoot.*;
  */
 public class Vehiculo extends Obstaculo
 {
-     public void removeScreen()
+     public void removeVehiculo()
     {
         World world;
         world = getWorld();
@@ -17,7 +17,8 @@ public class Vehiculo extends Obstaculo
        
        if(x<=0)
        {
-           world.removeObject(this);
+         world.removeObject(this);
+         
        }
     }   
 

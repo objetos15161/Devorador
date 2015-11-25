@@ -15,6 +15,7 @@ public class WorldJack extends World
    private Reloj reloj;
    private Devorador jack;
    private GreenfootSound musica;
+   private SimpleTimer cuenta,cuenta2;
 
 
     /**
@@ -26,7 +27,7 @@ public class WorldJack extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800,500, 1); 
-         
+        
         musica=new GreenfootSound("Two.mp3");
         
         setPaintOrder(Devorador.class,Fresa.class,Manzana.class,Platano.class,Pizza.class,Hamburguesa.class);
@@ -42,7 +43,9 @@ public class WorldJack extends World
      * Esta creando siempre la fruta en diferentes lugares.
      */
     public void act()
-    {   musica.playLoop();
+    {   
+        musica.playLoop();
+        
        switch (jack.getNivel())
        {
            case 1:
@@ -51,14 +54,77 @@ public class WorldJack extends World
            case 2:
                  
                  segundoNivel();
+                 if(cuenta.millisElapsed()>=5000){
+                      cuenta.mark();
+                      creaAutobus();
+                      
+                      }
+                 if(cuenta2.millisElapsed()>=4000){
+                      cuenta2.mark();
+                      creaCarro();
+                      
+                 }
+               
                  break; 
            case 3:
                  tercerNivel();
+                 if(cuenta.millisElapsed()>=5000){
+                      cuenta.mark();
+                      creaCarroVerde();
+                      
+                      }
+                 if(cuenta2.millisElapsed()>=8000){
+                      cuenta2.mark();
+                      creaCarroAzul();
+                       removeObjects(getObjects(Bomba.class));
+                      
+                 }
                  break;
+
         }
         
     }
+   /**
+     *  El método prepara coloca los objetos fijos como son los estantes de fruta y la posicion inicial de el Devorador.
+    También se crean aleatoriamente la clase Fresa, fija la posicion de objeto Reloj y Exit.  
+    Los agrega al WorldJack.
+     */
+    public void preparaMundo()
+    {  
+        int x= getWidth();
+        int y= getHeight();
+        jack = new Devorador(1,5,1);
+        reloj=new Reloj();
+        
+        cuenta=new SimpleTimer();
+        cuenta2=new SimpleTimer();
+      
+        
+        Selve selve = new Selve();
+        Selve selve1 = new Selve();
+        Selve selve2 = new Selve();
+        Selve selve3 = new Selve();
+        Selve selve4 = new Selve();
+        Selve selve5 = new Selve();
+        Fresa str= new Fresa();
+        Fresa  str1= new Fresa();
+        Fresa str2= new Fresa();
+        
 
+        addObject(reloj,getWidth()-30,20);
+        addObject(jack,(getWidth()/2),getHeight()-50);
+        addObject(selve,750,480);
+        addObject(selve1,650,480);
+        addObject(selve2,550,480);
+        addObject(selve3,60,480);
+        addObject(selve4,160,480);
+        addObject(selve5,260,480);
+      
+
+        addObject(str, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
+        addObject(str1, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
+        addObject(str2, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
+    }
     /**
      * Este método coloca aleatoriamente en  lugares del mundo los
      * objetos Platano,Manzana,Pizza y Hamburguesa.
@@ -87,7 +153,7 @@ public class WorldJack extends World
     public void segundoNivel()
     {
          
-         // cuenta=new SimpleTimer();
+        
          Bache b=new Bache();
          Bache b1=new Bache();
          Bache b2=new Bache();
@@ -95,7 +161,8 @@ public class WorldJack extends World
          Bache b4=new Bache();
        
          
-         Nena n1 = new Nena();
+         Nena n = new Nena();
+        
          setBackground("fondo1.jpg");
          setPaintOrder(Autobus.class,Carro.class,Devorador.class);  
          removeObjects(getObjects(Fresa.class));
@@ -111,91 +178,28 @@ public class WorldJack extends World
          addObject(b3,150,200);
          addObject(b4,80,370);
 
-          addObject(n1,50,450);
-       /*if(Greenfoot.getRandomNumber(1000) < 2 )
-        { 
-            creaNena();
-        }*/
-        
-       /* if(cuenta.millisElapsed()>=100)
-        {
-            creaNena();
-            cuenta.mark();
-            
-          //  segundos++;
-        }*/
-        if(Greenfoot.getRandomNumber(1000) < 8 )
-        { 
-            creaCarro();
-        }
-        
-        if(Greenfoot.getRandomNumber(1000) < 5 )
-        { 
-            creaAutobus();
-        }
-         
+       
+    
+          addObject(n,100,450);
     }
         
      public void tercerNivel()
     {
        
          setBackground("fondo2.jpg");
-         //setPaintOrder(Autobus.class,Carro.class,Devorador.class);  
+         setPaintOrder(CarroVerde.class,CarroAzul.class,Bomba.class);  
          removeObjects(getObjects(Carro.class));
          removeObjects(getObjects(Autobus.class));
          removeObjects(getObjects(Nena.class));
+         removeObjects(getObjects(Bache.class));
          Casa c=new Casa();
          addObject(c,385,60);
-         
-         if(Greenfoot.getRandomNumber(1000) < 8 )
-        { 
-            creaCarroVerde();
-        }
-        
-        if(Greenfoot.getRandomNumber(1000) < 5 )
-        { 
-            creaCarroAzul();
-        }
-      
-         
+     
     }
-    /**
-     *  El método prepara coloca los objetos fijos como son los estantes de fruta y la posicion inicial de el Devorador.
-    También se crean aleatoriamente la clase Fresa, fija la posicion de objeto Reloj y Exit.  
-    Los agrega al WorldJack.
-     */
-    public void preparaMundo()
-    {  
-        int x= getWidth();
-        int y= getHeight();
-        jack = new Devorador(1,5,1);
-        reloj=new Reloj();
-       // Exit e = new Exit(); 
-        Selve selve = new Selve();
-        Selve selve1 = new Selve();
-        Selve selve2 = new Selve();
-        Selve selve3 = new Selve();
-        Selve selve4 = new Selve();
-        Selve selve5 = new Selve();
-        Fresa str= new Fresa();
-        Fresa  str1= new Fresa();
-        Fresa str2= new Fresa();
+    
         
-
-        addObject(reloj,getWidth()-30,20);
-        addObject(jack,(getWidth()/2),getHeight()-50);
-        addObject(selve,750,480);
-        addObject(selve1,650,480);
-        addObject(selve2,550,480);
-        addObject(selve3,60,480);
-        addObject(selve4,160,480);
-        addObject(selve5,260,480);
-      //  addObject(e,getWidth()-780,250);
-
-        addObject(str, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
-        addObject(str1, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
-        addObject(str2, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
-    }
+  
+    
 
     /**
      * Crea el Objeto Platano aleatoriamente sobre el ancho del mundo x=0, y a una altura de  y=460.
@@ -262,7 +266,7 @@ public class WorldJack extends World
         Nena n= new Nena();
         //int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
         //int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
-        addObject(n,200,450);
+        addObject(n,50,450);
     }
     
       private void creaCarroAzul()
@@ -271,13 +275,14 @@ public class WorldJack extends World
        
         addObject(azul,790,300);
     }
+    
       private void creaCarroVerde()
     {
         CarroVerde verde= new CarroVerde();
         CarroVerde verde1= new CarroVerde();
        
-        addObject(verde,790,210);
-        addObject(verde1,790,390);
+        addObject(verde,790,200);
+        addObject(verde1,790,360);
     }
    
     

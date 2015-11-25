@@ -97,6 +97,7 @@ public class Devorador extends Actor
         checaVidas();
         validaciones();
         aumentaNivel();
+        
     }    
 
     public void move()
@@ -236,7 +237,7 @@ public class Devorador extends Actor
             removeTouching(Fresa.class);
             Greenfoot.playSound("c.wav");
             puntos.setValue(puntos.getValue()+400);
-            //puntos.setValue(puntos.getValue()+50);
+           // puntos.setValue(puntos.getValue()+50);
         }
         if(this.isTouching(Manzana.class)){
            
@@ -308,11 +309,20 @@ public class Devorador extends Actor
             Greenfoot.playSound("bocina.wav");
             Greenfoot.delay(20);
         }
-        
+        if(this.isTouching(Bomba.class)){
+            World world = getWorld();
+            removeTouching(Bomba.class);
+            vidas.setValue(vidas.getValue()-1);
+            
+            setImage("expo.png");
+            Greenfoot.playSound("sony.wav");
+            Greenfoot.delay(30);
+        }
         if(this.isTouching(Bache.class)){
             puntos.setValue(puntos.getValue()-1);
             setImage("arri2.png");
         }
+ 
       
 
     }
@@ -325,8 +335,8 @@ public class Devorador extends Actor
           world = getWorld();
         
           world.addObject(new Perdiste(),400,240);
-          //Greenfoot.stop();
-          Greenfoot.delay(40);
+          Greenfoot.stop();
+          //Greenfoot.delay(40);
           //Greenfoot.setWorld(new WorldMenu());
         }
         
@@ -352,23 +362,30 @@ public class Devorador extends Actor
    
     public void aumentaNivel()
     {
-        if(flag==0&&(puntos.getValue())>=400)
-        {  
+        if(flag==0&&(puntos.getValue())>=400){  
             flag=1;
             nivel.setValue(nivel.getValue()+1);
             this.setLocation(750,120);
         }
         
-        if(this.isTouching(Nena.class))
-        {  
-          
+        if(this.isTouching(Nena.class)){  
             nivel.setValue(nivel.getValue()+1);
-            this.setLocation(30,450);
-            
-            
+            this.setLocation(30,450);  
         }
-        
+        if(this.isTouching(Casa.class)){
+             World world = getWorld();
+             this.setLocation(400,400);
+           nivel.setValue(nivel.getValue()+1);
+           world.addObject(new Ganaste(),400,240);
+          Greenfoot.playSound("sony.wav");
+          
+          Greenfoot.stop();
+          Greenfoot.delay(40);
+          
+        }
     }
-        
+    
+     
 }
+
 

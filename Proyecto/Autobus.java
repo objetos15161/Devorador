@@ -15,7 +15,7 @@ public class Autobus extends Vehiculo
     public void act() 
     {
         // Add your action code here.
-        super.removeScreen();
-        move(-5);
+        super.removeVehiculo();
+        move(-8);
     }    
 }

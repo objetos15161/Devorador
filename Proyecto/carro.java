@@ -14,7 +14,7 @@ public class Carro extends Vehiculo
      */
     public void act() 
     {
-        super.removeScreen();
-        move(-3);
+        super.removeVehiculo();
+        move(-6);
     } 
 }
