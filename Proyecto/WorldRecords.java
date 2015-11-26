@@ -1,28 +1,29 @@
 import greenfoot.*;
 
 /**
- * Write a description of class WorldCreditos here.
+ * Write a description of class WorldRecords here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class WorldCreditos extends World
-{
-    private AtrasBoton a;
+public class WorldRecords extends World
+{   private AtrasBoton a;
     private GreenfootSound c;
     private ScoreBoard score;
     /**
-     * Constructor for objects of class WorldCreditos.
+     * Constructor for objects of class WorldRecords.
      * 
      */
-    public WorldCreditos()
+    public WorldRecords()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 500, 1); 
+        score=new ScoreBoard(600, 400);
+        addObject(score, getWidth()/2, getHeight()/2);
         a=new AtrasBoton();
         addObject(a,700,400);
     }
-      /*
+    /*
      * Checa si se presiono la flecha de regresar, para mandar al jugador al menú principal
      */
     public void act()
@@ -35,6 +36,5 @@ public class WorldCreditos extends World
             }
             
         }   
-
     }
 }

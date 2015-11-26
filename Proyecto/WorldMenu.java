@@ -49,15 +49,26 @@ public class WorldMenu extends World
         
         if(Greenfoot.getMouseInfo()!=null){ 
             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == jugar){
-               Greenfoot.playSound("clickkk.wav");
+               Greenfoot.playSound("kk.wav");
                Greenfoot.delay(40);
                 Greenfoot.setWorld(new WorldJack());
             }
              
             if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == ayuda){
-               Greenfoot.playSound("clickkk.wav");
+               Greenfoot.playSound("kk.wav");
                Greenfoot.delay(40);
                 Greenfoot.setWorld(new WorldAyuda());
+            }
+            
+            if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == records){
+               Greenfoot.playSound("kk.wav");
+               Greenfoot.delay(40);
+                Greenfoot.setWorld(new WorldRecords());
+            }
+              if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor() == creditos){
+               Greenfoot.playSound("kk.wav");
+               Greenfoot.delay(40);
+                Greenfoot.setWorld(new WorldCreditos());
             }
     }
     

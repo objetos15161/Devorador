@@ -41,6 +41,9 @@ public class Devorador extends Actor
     /**contiene el nivel en el que se encuentra el jugador*/
     private Counter nivel;
     
+    private Records records;
+
+    
     private int flag=0;
     
     /**
@@ -73,6 +76,8 @@ public class Devorador extends Actor
         paradoB=true;
         avanza=0;
         direccion=IZQUIERDA; 
+        
+         records=new Records();
     }
 
     /**
@@ -93,7 +98,7 @@ public class Devorador extends Actor
         caminar();
         validaFruta();
         validaComidaCha();
-        validaVehiculos();
+        validaObstaculos();
         checaVidas();
         validaciones();
         aumentaNivel();
@@ -197,7 +202,8 @@ public class Devorador extends Actor
      * y que no pase las clases Counter y Selve
      */
     public void validaciones()
-    {
+    {  
+        GreenfootImage miImagen=super.getImage();
         if(this.isTouching(Counter.class) || this.isTouching(Selve.class)){
            
         if(Greenfoot.isKeyDown("up")){ 
@@ -216,6 +222,9 @@ public class Devorador extends Actor
           setLocation(getX()+DERECHA,getY());
         }
         }
+        if(getY()+miImagen.getHeight()/2>=getWorld().getHeight()){
+              this.setLocation(getX(),getY()+ARRIBA);
+            }
 
               
     }
@@ -236,15 +245,22 @@ public class Devorador extends Actor
            
             removeTouching(Fresa.class);
             Greenfoot.playSound("c.wav");
-            puntos.setValue(puntos.getValue()+400);
-           // puntos.setValue(puntos.getValue()+50);
+           // puntos.setValue(puntos.getValue()+400);
+           puntos.setValue(puntos.getValue()+50);
         }
-        if(this.isTouching(Manzana.class)){
+        if(this.isTouching(Manzana.class) ){
            
             removeTouching(Manzana.class);
             Greenfoot.playSound("c.wav");
             puntos.setValue(puntos.getValue()+20);
         }  
+       /* if(this.isTouching(FresaBebe.class) ){
+           
+            removeTouching(FresaBebe.class);
+            Greenfoot.playSound("c.wav");
+            puntos.setValue(puntos.getValue()+50);
+        }*/  
+       
     }
     
     /**
@@ -281,9 +297,9 @@ public class Devorador extends Actor
         }  
     }
     
-    public void validaVehiculos()
+    public void validaObstaculos()
     {
-        if(this.isTouching(Carro.class)){
+        if(this.isTouching(Carro.class) ){
             World world;
             world=getWorld();
             removeTouching(Carro.class);
@@ -293,7 +309,33 @@ public class Devorador extends Actor
             setImage("muerto.png");
             
             Greenfoot.delay(20);
-             this.setLocation(750,120);
+             this.setLocation(600,140);
+        } 
+        
+        if(this.isTouching(CarroVerde.class) ){
+            World world;
+            world=getWorld();
+            removeTouching(CarroVerde.class);
+            Greenfoot.playSound("bocina.wav");
+            vidas.setValue(vidas.getValue()-1);
+  
+            setImage("muerto.png");
+            
+            Greenfoot.delay(20);
+             this.setLocation(30,470);
+        } 
+        
+        if(this.isTouching(CarroAzul.class) ){
+            World world;
+            world=getWorld();
+            removeTouching(CarroAzul.class);
+            Greenfoot.playSound("bocina.wav");
+            vidas.setValue(vidas.getValue()-1);
+  
+            setImage("muerto.png");
+            
+            Greenfoot.delay(20);
+             this.setLocation(30,470);
         } 
         
        if(this.isTouching(Autobus.class)){
@@ -322,8 +364,6 @@ public class Devorador extends Actor
             puntos.setValue(puntos.getValue()-1);
             setImage("arri2.png");
         }
- 
-      
 
     }
     
@@ -335,17 +375,41 @@ public class Devorador extends Actor
           world = getWorld();
         
           world.addObject(new Perdiste(),400,240);
-          Greenfoot.stop();
-          //Greenfoot.delay(40);
-          //Greenfoot.setWorld(new WorldMenu());
-        }
-        
-            
-            
-            
+          Greenfoot.delay(40);
+          aumentaRecords();
+        }    
     }
    
+        public void aumentaNivel()
+    {
+        if(flag==0&&(puntos.getValue())>=400){  
+            flag=1;
+            nivel.setValue(nivel.getValue()+1);
+            this.setLocation(750,120);
+        }
+        
+        if(this.isTouching(Nena.class)){  
+            nivel.setValue(nivel.getValue()+1);
+            this.setLocation(30,470);  
+        }
+        if(this.isTouching(Casa.class)){
+             World world = getWorld();
+             this.setLocation(400,400);
+           nivel.setValue(nivel.getValue()+1);
+           world.addObject(new Ganaste(),400,240);
+          Greenfoot.playSound("sony.wav");
+          Greenfoot.delay(50);
+          aumentaRecords();
+          
+        }
+    }
     
+    public void aumentaRecords()
+    {
+         records.guardaRecords(puntos.getValue());
+         Greenfoot.delay(30);
+         Greenfoot.setWorld(new WorldMenu());
+    }
     public int getNivel()
     {
         return nivel.getValue();
@@ -360,30 +424,7 @@ public class Devorador extends Actor
         return puntos.getValue();
     }
    
-    public void aumentaNivel()
-    {
-        if(flag==0&&(puntos.getValue())>=400){  
-            flag=1;
-            nivel.setValue(nivel.getValue()+1);
-            this.setLocation(750,120);
-        }
-        
-        if(this.isTouching(Nena.class)){  
-            nivel.setValue(nivel.getValue()+1);
-            this.setLocation(30,450);  
-        }
-        if(this.isTouching(Casa.class)){
-             World world = getWorld();
-             this.setLocation(400,400);
-           nivel.setValue(nivel.getValue()+1);
-           world.addObject(new Ganaste(),400,240);
-          Greenfoot.playSound("sony.wav");
-          
-          Greenfoot.stop();
-          Greenfoot.delay(40);
-          
-        }
-    }
+
     
      
 }

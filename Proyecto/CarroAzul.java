@@ -15,7 +15,20 @@ public class CarroAzul extends Vehiculo
     public void act() 
     {
         // Add your action code here.}
-        super.removeVehiculo();
-        move(-3);
+        removeVehiculo();
+        move(3);
     }    
+     public void removeVehiculo()
+    {
+        World world;
+        world = getWorld();
+        int x = getX();
+        //int worldWidth = world.getWidth();
+       
+       if(x>=780)
+       {
+         world.removeObject(this);
+         
+       }
+    }   
 }

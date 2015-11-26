@@ -16,7 +16,8 @@ public class WorldJack extends World
    private Devorador jack;
    private GreenfootSound musica;
    private SimpleTimer cuenta,cuenta2;
-
+   
+  
 
     /**
      * EL constructor de la clase WorldJack. Se crea el escenario el orden de las clases, el tamaño del entorno,
@@ -54,12 +55,12 @@ public class WorldJack extends World
            case 2:
                  
                  segundoNivel();
-                 if(cuenta.millisElapsed()>=5000){
+                 if(cuenta.millisElapsed()>=3000){
                       cuenta.mark();
                       creaAutobus();
                       
                       }
-                 if(cuenta2.millisElapsed()>=4000){
+                 if(cuenta2.millisElapsed()>=5000){
                       cuenta2.mark();
                       creaCarro();
                       
@@ -79,6 +80,7 @@ public class WorldJack extends World
                        removeObjects(getObjects(Bomba.class));
                       
                  }
+                
                  break;
 
         }
@@ -187,14 +189,23 @@ public class WorldJack extends World
     {
        
          setBackground("fondo2.jpg");
-         setPaintOrder(CarroVerde.class,CarroAzul.class,Bomba.class);  
+         setPaintOrder(Counter.class,CarroVerde.class,CarroAzul.class,Bomba.class,FresaBebe.class);  
          removeObjects(getObjects(Carro.class));
          removeObjects(getObjects(Autobus.class));
          removeObjects(getObjects(Nena.class));
          removeObjects(getObjects(Bache.class));
+         
          Casa c=new Casa();
-         addObject(c,385,60);
-     
+         addObject(c,385,50);
+         
+         /*FresaBebe fb=new FresaBebe();
+         addObject(fb,100,150);
+         
+         FresaBebe fb1=new FresaBebe();
+         addObject(fb1,400,280);
+         
+         FresaBebe fb2=new FresaBebe();
+         addObject(fb2,650,470);*/
     }
     
         
@@ -272,8 +283,7 @@ public class WorldJack extends World
       private void creaCarroAzul()
     {
         CarroAzul azul= new CarroAzul();
-       
-        addObject(azul,790,300);
+        addObject(azul,0,300);
     }
     
       private void creaCarroVerde()
@@ -281,8 +291,8 @@ public class WorldJack extends World
         CarroVerde verde= new CarroVerde();
         CarroVerde verde1= new CarroVerde();
        
-        addObject(verde,790,200);
-        addObject(verde1,790,360);
+        addObject(verde,790,220);
+        addObject(verde1,790,380);
     }
    
     
