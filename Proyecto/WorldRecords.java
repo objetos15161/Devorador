@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class WorldRecords here.
+ * Clase WorldRecords muestra al jugador los puntuajes más altos de ortos jugadores.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodriguez) 
+ * @version (2015.11.27)
  */
 public class WorldRecords extends World
 {   private AtrasBoton a;
@@ -23,9 +23,9 @@ public class WorldRecords extends World
         a=new AtrasBoton();
         addObject(a,700,400);
     }
-    /*
+    /**
      * Checa si se presiono la flecha de regresar, para mandar al jugador al menú principal
-     */
+    */
     public void act()
     {
         if(Greenfoot.getMouseInfo()!=null){

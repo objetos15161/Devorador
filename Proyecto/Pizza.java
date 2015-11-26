@@ -1,16 +1,15 @@
-import greenfoot.*;
+import greenfoot.*; 
 
 /**
- * Write a description of class Pizza here.
+ * La clase Pizza aparece en el primer nive moviendose de izquierda a derecha en movimiento constante.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @version (2015.11.27)
  */
 public class Pizza extends Obstaculo
 {
     /**
-     * Act - do whatever the Pizza wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     *Manda llamar a el método checaPizza
      */
     public void act() 
     {
@@ -19,6 +18,10 @@ public class Pizza extends Obstaculo
        //checaMargen();
      //  super.checa();
     }    
+    
+     /**
+      * El método checaPizza verifica si el objeto esta en el limite y lo elimina.
+      */
      public void checaPizza()
     {
        // World world;

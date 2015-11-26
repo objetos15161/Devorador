@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class WorldAyuda here.
+ * Esta clase WorldAyuda muestra la ayuda necesaria para el Jugador.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodriguez) 
+ * @version (2015.11.27)
  */
 public class WorldAyuda extends World
 {

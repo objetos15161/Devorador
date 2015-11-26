@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class AyudaBoton here.
+ * El AyudaBoton permite ir A WorldAyuda.
  * 
  * @author (your name) 
  * @version (a version number or a date)

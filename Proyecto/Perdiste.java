@@ -1,17 +1,16 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Letrero here.
+ * Crea un Objeto Perdiste.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Catillo Rodriguez) 
+ * @version (2015.11.26)
  */
 public class Perdiste extends Actor
 {   
     private GreenfootImage mensaje;
     /**
-     * Act - do whatever the Letrero wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * El constructor de Perdiste crea un objeto con la imagen.
      */
     public Perdiste() 
     {

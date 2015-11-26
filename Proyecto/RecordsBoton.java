@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class RecordsBoton here.
+ * El RecordBoton permite regresar ir al WordlRecords.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Catillo Rodriguez) 
+ * @version (2015.11.27)
  */
 public class RecordsBoton extends Actor
 {

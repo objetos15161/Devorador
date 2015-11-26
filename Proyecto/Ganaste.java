@@ -1,17 +1,16 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Ganaste here.
+ * Este método crea un Objeto que tiene un mensaje ganaste.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castollo Rodriguez) 
+ * @version (2015.11.27)
  */
 public class Ganaste extends Actor
 {
     private GreenfootImage mensaje;
     /**
-     * Act - do whatever the Ganaste wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Crea un objeto con la imagen ganaste.
      */
     public Ganaste() 
     {

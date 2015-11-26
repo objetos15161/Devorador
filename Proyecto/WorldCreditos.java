@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class WorldCreditos here.
+ * Clase WorldCreditos muestra los créditos del Juego.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @version (2015.11.27)
  */
 public class WorldCreditos extends World
 {
@@ -22,7 +22,7 @@ public class WorldCreditos extends World
         a=new AtrasBoton();
         addObject(a,700,400);
     }
-      /*
+      /**
      * Checa si se presiono la flecha de regresar, para mandar al jugador al menú principal
      */
     public void act()

@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class WorldMenu here.
+ * Esta clase WorldMenu contiene el menu principal del Juego se validan las opciones.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @version (2015.11.27)
  */
 public class WorldMenu extends World
 {
@@ -16,8 +16,8 @@ public class WorldMenu extends World
 
     
     /**
-     * Constructor for objects of class WorldMenu.
-     * 
+     * Constructor for objects of class WorldMenu. 
+     * Crea en mundo y los botones del menú.
      */
     public WorldMenu()
     {    
@@ -37,13 +37,17 @@ public class WorldMenu extends World
         addObject(creditos,getWidth()/4+15,getHeight()-70);
     }
     /**
-     * Invoca a los métodos del BurglarMenu
+     * Invoca a los métodos del WorldMenu.
+     * validar el botón que se de click y pueda acceder al mundo correspondiente.
      */
-    public void act()
-    {
-        
+    public void act(){
         verifica();
     }
+    
+    /**
+     * El método verifica checa los botones del menú , y según sea el botón presionado hace 
+     * la acción indicada
+     */
      public void verifica()
     {
         

@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Obstaculos here.
+ * Clase Obstaculos.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @version (2015.11.27)
  */
 public class Obstaculo extends Actor
 {

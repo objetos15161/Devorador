@@ -1,15 +1,17 @@
 import greenfoot.*;
 
 /**
- * Write a description of class AtrasBoton here.
+ * El AtrasBoton permite regresar al menú del Juego.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodriguez) 
+ * @version (2015.11.27)
  */
 public class AtrasBoton extends Actor
 {
     private GreenfootImage atras;
-    //private GreenfootSound clic;
+    /**
+     * Constructor de la clase AtrasBoton
+     */
     public AtrasBoton()
     {
         atras=new GreenfootImage("RE.png");

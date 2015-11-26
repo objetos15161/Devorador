@@ -1,7 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Pizza\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\r\nManda\ llamar\ a\ el\ m\u00E9todo\ checaPizza\r\n
 comment1.params=
 comment1.target=void\ checaPizza()
+comment1.text=\r\n\ El\ m\u00E9todo\ checaPizza\ verifica\ si\ el\ objeto\ esta\ en\ el\ limite\ y\ lo\ elimina.\r\n
 numComments=2

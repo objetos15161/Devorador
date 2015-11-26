@@ -41,7 +41,8 @@ public class WorldJack extends World
 
 
     /**
-     * Esta creando siempre la fruta en diferentes lugares.
+     * Siempre esta checando en que nivel esta el jugador.
+     * Para poder quitar y agregar los objetos correspondientes.
      */
     public void act()
     {   
@@ -88,7 +89,7 @@ public class WorldJack extends World
     }
    /**
      *  El método prepara coloca los objetos fijos como son los estantes de fruta y la posicion inicial de el Devorador.
-    También se crean aleatoriamente la clase Fresa, fija la posicion de objeto Reloj y Exit.  
+    También se crean aleatoriamente la clase Fresa, fija la posicion de objeto Reloj.  
     Los agrega al WorldJack.
      */
     public void preparaMundo()
@@ -151,7 +152,9 @@ public class WorldJack extends World
             creaHamburguesa();
         }
     }
-    
+    /**
+     * Coloca los objetos del segundo nivel Baches, Nena y quita los del primer nivel.
+     */
     public void segundoNivel()
     {
          
@@ -184,7 +187,9 @@ public class WorldJack extends World
     
           addObject(n,100,450);
     }
-        
+    /**
+     * Método que Coloca los objetos del segundo nivel Casa y quita los del Segundo nivel.
+     */
      public void tercerNivel()
     {
        
@@ -254,24 +259,27 @@ public class WorldJack extends World
         int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
         addObject(h,x,50);
     }
-    
+    /**
+     * Este método crea 2 Objetos de Clase Carro en posiciones definidas .
+     */
     private void creaCarro()
     {
         Carro c= new Carro();
         Carro c2= new Carro();
-       
         addObject(c,790,210);
         addObject(c2,790,390);
     }
-    
+    /**
+     * Método que crea un Objeto tipo Autbus en una posición definida.
+     */
     private void creaAutobus()
     {
         Autobus a= new Autobus();
-        int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
-        int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
         addObject(a,790,300);
     }
-    
+    /**
+     * Método que crea un Objeto tipo Nena en una posición definida.
+     */
      private void creaNena()
     {
         Nena n= new Nena();
@@ -279,13 +287,18 @@ public class WorldJack extends World
         //int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
         addObject(n,50,450);
     }
-    
+    /**
+     * Método que crea un Objeto de la Clase CarroAzul en una posición definida.
+     */
       private void creaCarroAzul()
     {
         CarroAzul azul= new CarroAzul();
         addObject(azul,0,300);
     }
     
+    /**
+     * Método que crea un Objeto de la Clase CarroVerde en una posición definida.
+     */
       private void creaCarroVerde()
     {
         CarroVerde verde= new CarroVerde();
