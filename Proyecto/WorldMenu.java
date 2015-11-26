@@ -22,7 +22,7 @@ public class WorldMenu extends World
     public WorldMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800,600, 1);
+        super(800,500, 1);
         
         jugar=new JugarBoton();
         ayuda=new AyudaBoton();
@@ -31,9 +31,9 @@ public class WorldMenu extends World
         
       
         
-        addObject(jugar,getWidth()/4+15,getHeight()/2-120);
-        addObject(records,getWidth()/4+15,getHeight()-185);
-        addObject(ayuda,getWidth()/4+15,getHeight()/2-10);
+        addObject(jugar,getWidth()/4+15,getHeight()/2-80);
+        addObject(records,getWidth()/4+15,getHeight()-150);
+        addObject(ayuda,getWidth()/4+15,getHeight()/2+10);
         addObject(creditos,getWidth()/4+15,getHeight()-70);
     }
     /**
