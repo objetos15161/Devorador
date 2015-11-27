@@ -1,9 +1,10 @@
 import greenfoot.*;
 
 /**
- * Clase WorldRecords muestra al jugador los puntuajes más altos de ortos jugadores.
+ * Clase WorldRecords muestra al jugador los puntuajes más altos de otros jugadores.
  * 
  * @author (Karen Castillo Rodriguez) 
+ * @author (Segura Luevano Beatriz Adriana) 
  * @version (2015.11.27)
  */
 public class WorldRecords extends World
@@ -23,18 +24,19 @@ public class WorldRecords extends World
         a=new AtrasBoton();
         addObject(a,700,400);
     }
+
     /**
      * Checa si se presiono la flecha de regresar, para mandar al jugador al menú principal
-    */
+     */
     public void act()
     {
         if(Greenfoot.getMouseInfo()!=null){
-           
-           if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor()==a){
-             //  clic.play();
+
+            if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor()==a){
+                //  clic.play();
                 Greenfoot.setWorld(new WorldMenu());
             }
-            
+
         }   
     }
 }

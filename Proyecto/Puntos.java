@@ -1,26 +1,25 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Comida here.
+ * De esta clase se crean los diferentes tipos de comida
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodriguez) 
+ * @author (Beatriz Adriana Segura Luevano) 
+ * @version (2015.11.27)
  */
 public class Puntos extends Actor
 {
     /**
-     * Act - do whatever the Manzana wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Checa cuando la comida llega a los bordes y la elimina
      */
-  
+
     public void checaLimite()
-    { //  x getWidth();
-     //  y getHeight();
+    {
         World world;
         world = getWorld();
         int y = getY();
         int alto = world.getHeight();
-       if(y == alto-30)
-           world.removeObject(this);
+        if(y == alto-30)
+            world.removeObject(this);
     }
 }

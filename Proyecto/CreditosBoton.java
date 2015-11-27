@@ -1,21 +1,22 @@
 import greenfoot.*;
 
 /**
- * Write a description of class CreditosBoton here.
+ * Esta clase crea el Boton que te llevara a los creditos en la pantalla principal 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @author (Beatriz Adriana Segura Luevano )
+ * @version (2015.11.27)
  */
 public class CreditosBoton extends Actor
 {
-  private GreenfootImage botonC;
-  
-   /**
-   * constructor de la clase Jugar
-   */
-  public CreditosBoton()
-  {
-      botonC=new GreenfootImage("CREDITOS.jpg");
-      setImage(botonC);
+    private GreenfootImage botonC;
+
+    /**
+     * Constructor que agrega la imagen al boton 
+     */
+    public CreditosBoton()
+    {
+        botonC=new GreenfootImage("CREDITOS.jpg");
+        setImage(botonC);
     }  
 }

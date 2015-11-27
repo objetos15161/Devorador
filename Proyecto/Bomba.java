@@ -1,21 +1,20 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Bomba here.
+ * Esta clase carga la imagen de la Bomba 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @author (Beatriz Adriana Segura Luevano ) 
+ * @version (2015.11.27)
  */
 public class Bomba extends Obstaculo
 {
       private GreenfootImage bom;
     /**
-     * Act - do whatever the Ganaste wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * constructor que abre y carga la imagen de la bomba 
      */
     public Bomba() 
     {
-        // Add your action code here.
           bom=new GreenfootImage("bombo.png");
           setImage(bom);
     }      

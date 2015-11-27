@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=WorldMenu()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ WorldMenu.\ \r\n\ Crea\ en\ mundo\ y\ los\ botones\ del\ men\u00FA.\r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ WorldMenu.\ \r\n\ Crea\ el\ mundo\ y\ los\ botones\ del\ men\u00FA.\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Invoca\ a\ los\ m\u00E9todos\ del\ WorldMenu.\r\n\ validar\ el\ bot\u00F3n\ que\ se\ de\ click\ y\ pueda\ acceder\ al\ mundo\ correspondiente.\r\n

@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Fresa\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\r\n\ Manda\ llamar\ los\ metodos\ para\ hacer\ los\ movimientos\ de\ la\ fresa\r\n
 comment1.params=
 comment1.target=void\ aparece()
+comment1.text=\r\n\ En\ este\ metodo\ se\ hace\ el\ movimientos\ aleatorio\ de\ la\ fresa\ sobre\ las\ coordenadas\ x,y\r\n
 comment2.params=
 comment2.target=void\ chechaLimites()
+comment2.text=\r\n\ Este\ metodo\ checa\ las\ coordenadas\ x,y\ de\ la\ fresa\ para\ poder\ eliminarla\ al\ llegar\ a\ los\ bordes\r\n
 numComments=3

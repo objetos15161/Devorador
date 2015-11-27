@@ -2,8 +2,8 @@ import greenfoot.*;
 
 /**
  * Crea un Objeto Perdiste.
- * 
- * @author (Karen Catillo Rodriguez) 
+ * @author (Karen Castillo Rodriguez) 
+ * @author (beatriz Adriana Segura Luevano) 
  * @version (2015.11.26)
  */
 public class Perdiste extends Actor
@@ -14,7 +14,6 @@ public class Perdiste extends Actor
      */
     public Perdiste() 
     {
-        // Add your action code here.
           mensaje=new GreenfootImage("gameover2.png");
           setImage(mensaje);
     }    

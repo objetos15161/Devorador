@@ -1,22 +1,21 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Selve here.
+ * Este metodo agrega una imagen al mundo
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodriguez) 
+ * @author (Beatriz Adriana Segura Luevano) 
+ * @version (2015.11.27)
  */
 public class Selve extends Actor
 {   
     private GreenfootImage selve;
     /**
-     * Act - do whatever the Selve wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor que solo agrega una imagen 
      */
-   public Selve() 
+    public Selve() 
     {
-        // Add your action code here.
-          selve=new GreenfootImage("stta.png");
-          setImage(selve);
+        selve=new GreenfootImage("stta.png");
+        setImage(selve);
     }    
 }

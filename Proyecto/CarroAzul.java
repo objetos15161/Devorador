@@ -1,34 +1,36 @@
 import greenfoot.*;
 
 /**
- * Write a description of class CarroAzul here.
+ * De esta clase se creera uno de los vehiculos para el 3er nivel 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @author (Beatriz Adriana Segura Luevano ) 
+ * @version (2015.11.27)
  */
 public class CarroAzul extends Vehiculo
 {
     /**
-     * Act - do whatever the CarroAzul wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     *Indica el movimiento hacia la derecha del vehiculo
      */
     public void act() 
     {
-        // Add your action code here.}
         removeVehiculo();
         move(3);
     }    
-     public void removeVehiculo()
+
+    /**
+     *Valida cuando el vehiculo llega al borde y lo remueve 
+     */
+    public void removeVehiculo()
     {
         World world;
         world = getWorld();
         int x = getX();
-        //int worldWidth = world.getWidth();
-       
-       if(x>=780)
-       {
-         world.removeObject(this);
-         
-       }
+
+        if(x>=780)
+        {
+            world.removeObject(this);
+
+        }
     }   
 }

@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ checaLimite()
+comment0.text=\r\n\ Este\ metodo\ checa\ los\ limites\ de\ la\ pantalla\ para\ asi\ remover\ los\ objetos\ al\ llegar\ a\ los\ extremos\r\n
+numComments=1

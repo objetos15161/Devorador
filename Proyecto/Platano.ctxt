@@ -1,7 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Plantano\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\r\n\ Hace\ el\ moviento\ de\ 3\ pixeles\ cada\ vez\ que\ se\ me\ mueve\ \r\n
 comment1.params=
 comment1.target=void\ checaPlatano()
+comment1.text=\r\n\ Checa\ los\ limites\ de\ la\ pantalla\ para\ desaparecer\ el\ objeto\ al\ llegar\ a\ los\ limites\r\n
 numComments=2

@@ -1,25 +1,24 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Vehiculo here.
+ * De esta clase se crean los vehiculos a usar en el juego 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @author (Beatriz Adriana Segura Luevano ) 
+ * @version (2015.11.27)
  */
 public class Vehiculo extends Obstaculo
 {
-     public void removeVehiculo()
+    public void removeVehiculo()
     {
         World world;
         world = getWorld();
         int x = getX();
-        //int worldWidth = world.getWidth();
-       
-       if(x<=0)
-       {
-         world.removeObject(this);
-         
-       }
+
+        if(x<=0)
+        {
+            world.removeObject(this);
+        }
     }   
 
 }

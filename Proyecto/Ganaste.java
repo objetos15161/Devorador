@@ -2,7 +2,7 @@ import greenfoot.*;
 
 /**
  * Este método crea un Objeto que tiene un mensaje ganaste.
- * 
+ * @author (Beatriz Adriana Segura Luevano) 
  * @author (Karen Castollo Rodriguez) 
  * @version (2015.11.27)
  */
@@ -14,8 +14,7 @@ public class Ganaste extends Actor
      */
     public Ganaste() 
     {
-        // Add your action code here.
-          mensaje=new GreenfootImage("win.png");
-          setImage(mensaje);
+        mensaje=new GreenfootImage("win.png");
+        setImage(mensaje);
     }      
 }

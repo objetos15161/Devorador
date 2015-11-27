@@ -3,7 +3,7 @@ import greenfoot.*;
 /**
  * La clase WorldJack va a contener el escenario del juego y se checaran el cambio de niveles.
  * Se crearan los objetos o clases y su movimientos.
- * Inclute metódos de validaion de algunos objetos o clases.
+ * Incluye metódos de validaion de algunos objetos o clases.
  * 
  * @author (Castillo Rodriguez Karen) 
  * @author (Beatriz Segura Luevano)
@@ -11,13 +11,11 @@ import greenfoot.*;
  */
 public class WorldJack extends World
 {
-  
-   private Reloj reloj;
-   private Devorador jack;
-   private GreenfootSound musica;
-   private SimpleTimer cuenta,cuenta2;
-   
-  
+
+    private Reloj reloj;
+    private Devorador jack;
+    private GreenfootSound musica;
+    private SimpleTimer cuenta,cuenta2;
 
     /**
      * EL constructor de la clase WorldJack. Se crea el escenario el orden de las clases, el tamaño del entorno,
@@ -28,18 +26,13 @@ public class WorldJack extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800,500, 1); 
-        
+
         musica=new GreenfootSound("Two.mp3");
-        
+
         setPaintOrder(Devorador.class,Fresa.class,Manzana.class,Platano.class,Pizza.class,Hamburguesa.class);
         preparaMundo();
-        
-        
-
 
     }
-
-
     /**
      * Siempre esta checando en que nivel esta el jugador.
      * Para poder quitar y agregar los objetos correspondientes.
@@ -47,47 +40,48 @@ public class WorldJack extends World
     public void act()
     {   
         musica.playLoop();
-        
-       switch (jack.getNivel())
-       {
-           case 1:
-                 primerNivel();
-                 break;
-           case 2:
-                 
-                 segundoNivel();
-                 if(cuenta.millisElapsed()>=3000){
-                      cuenta.mark();
-                      creaAutobus();
-                      
-                      }
-                 if(cuenta2.millisElapsed()>=5000){
-                      cuenta2.mark();
-                      creaCarro();
-                      
-                 }
-               
-                 break; 
-           case 3:
-                 tercerNivel();
-                 if(cuenta.millisElapsed()>=5000){
-                      cuenta.mark();
-                      creaCarroVerde();
-                      
-                      }
-                 if(cuenta2.millisElapsed()>=8000){
-                      cuenta2.mark();
-                      creaCarroAzul();
-                       removeObjects(getObjects(Bomba.class));
-                      
-                 }
-                
-                 break;
+
+        switch (jack.getNivel())
+        {
+            case 1:
+            primerNivel();
+            break;
+            case 2:
+
+            segundoNivel();
+            if(cuenta.millisElapsed()>=3000){
+                cuenta.mark();
+                creaAutobus();
+
+            }
+            if(cuenta2.millisElapsed()>=5000){
+                cuenta2.mark();
+                creaCarro();
+
+            }
+
+            break; 
+            case 3:
+            tercerNivel();
+            if(cuenta.millisElapsed()>=5000){
+                cuenta.mark();
+                creaCarroVerde();
+
+            }
+            if(cuenta2.millisElapsed()>=8000){
+                cuenta2.mark();
+                creaCarroAzul();
+                removeObjects(getObjects(Bomba.class));
+
+            }
+
+            break;
 
         }
-        
+
     }
-   /**
+
+    /**
      *  El método prepara coloca los objetos fijos como son los estantes de fruta y la posicion inicial de el Devorador.
     También se crean aleatoriamente la clase Fresa, fija la posicion de objeto Reloj.  
     Los agrega al WorldJack.
@@ -98,11 +92,10 @@ public class WorldJack extends World
         int y= getHeight();
         jack = new Devorador(1,5,1);
         reloj=new Reloj();
-        
+
         cuenta=new SimpleTimer();
         cuenta2=new SimpleTimer();
-      
-        
+
         Selve selve = new Selve();
         Selve selve1 = new Selve();
         Selve selve2 = new Selve();
@@ -112,7 +105,6 @@ public class WorldJack extends World
         Fresa str= new Fresa();
         Fresa  str1= new Fresa();
         Fresa str2= new Fresa();
-        
 
         addObject(reloj,getWidth()-30,20);
         addObject(jack,(getWidth()/2),getHeight()-50);
@@ -122,12 +114,12 @@ public class WorldJack extends World
         addObject(selve3,60,480);
         addObject(selve4,160,480);
         addObject(selve5,260,480);
-      
 
         addObject(str, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
         addObject(str1, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
         addObject(str2, Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y));
     }
+
     /**
      * Este método coloca aleatoriamente en  lugares del mundo los
      * objetos Platano,Manzana,Pizza y Hamburguesa.
@@ -146,76 +138,60 @@ public class WorldJack extends World
         { 
             creaPizza();
         }
-        
+
         if ( Greenfoot.getRandomNumber(1000) < 5)
         { 
             creaHamburguesa();
         }
     }
+
     /**
      * Coloca los objetos del segundo nivel Baches, Nena y quita los del primer nivel.
      */
     public void segundoNivel()
     {
-         
-        
-         Bache b=new Bache();
-         Bache b1=new Bache();
-         Bache b2=new Bache();
-         Bache b3=new Bache();
-         Bache b4=new Bache();
-       
-         
-         Nena n = new Nena();
-        
-         setBackground("fondo1.jpg");
-         setPaintOrder(Autobus.class,Carro.class,Devorador.class);  
-         removeObjects(getObjects(Fresa.class));
-         removeObjects(getObjects(Manzana.class));
-         removeObjects(getObjects(Platano.class));
-         removeObjects(getObjects(Pizza.class));
-         removeObjects(getObjects(Hamburguesa.class));
-         removeObjects(getObjects(Selve.class));
-          
-         addObject(b,400,300);
-         addObject(b1,700,400);
-         addObject(b2,600,200);
-         addObject(b3,150,200);
-         addObject(b4,80,370);
 
-       
-    
-          addObject(n,100,450);
+        Bache b=new Bache();
+        Bache b1=new Bache();
+        Bache b2=new Bache();
+        Bache b3=new Bache();
+        Bache b4=new Bache();
+
+        Nena n = new Nena();
+        setBackground("fondo1.jpg");
+        setPaintOrder(Autobus.class,Carro.class,Devorador.class);  
+        removeObjects(getObjects(Fresa.class));
+        removeObjects(getObjects(Manzana.class));
+        removeObjects(getObjects(Platano.class));
+        removeObjects(getObjects(Pizza.class));
+        removeObjects(getObjects(Hamburguesa.class));
+        removeObjects(getObjects(Selve.class));
+
+        addObject(b,400,300);
+        addObject(b1,700,400);
+        addObject(b2,600,200);
+        addObject(b3,150,200);
+        addObject(b4,80,370);
+
+        addObject(n,100,450);
     }
+
     /**
      * Método que Coloca los objetos del segundo nivel Casa y quita los del Segundo nivel.
      */
-     public void tercerNivel()
+    public void tercerNivel()
     {
-       
-         setBackground("fondo2.jpg");
-         setPaintOrder(Counter.class,CarroVerde.class,CarroAzul.class,Bomba.class,FresaBebe.class);  
-         removeObjects(getObjects(Carro.class));
-         removeObjects(getObjects(Autobus.class));
-         removeObjects(getObjects(Nena.class));
-         removeObjects(getObjects(Bache.class));
-         
-         Casa c=new Casa();
-         addObject(c,385,50);
-         
-         /*FresaBebe fb=new FresaBebe();
-         addObject(fb,100,150);
-         
-         FresaBebe fb1=new FresaBebe();
-         addObject(fb1,400,280);
-         
-         FresaBebe fb2=new FresaBebe();
-         addObject(fb2,650,470);*/
+
+        setBackground("fondo2.jpg");
+        setPaintOrder(Counter.class,CarroVerde.class,CarroAzul.class,Bomba.class,FresaBebe.class);  
+        removeObjects(getObjects(Carro.class));
+        removeObjects(getObjects(Autobus.class));
+        removeObjects(getObjects(Nena.class));
+        removeObjects(getObjects(Bache.class));
+
+        Casa c=new Casa();
+        addObject(c,385,50);
     }
-    
-        
-  
-    
 
     /**
      * Crea el Objeto Platano aleatoriamente sobre el ancho del mundo x=0, y a una altura de  y=460.
@@ -259,6 +235,7 @@ public class WorldJack extends World
         int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
         addObject(h,x,50);
     }
+
     /**
      * Este método crea 2 Objetos de Clase Carro en posiciones definidas .
      */
@@ -269,6 +246,7 @@ public class WorldJack extends World
         addObject(c,790,210);
         addObject(c2,790,390);
     }
+
     /**
      * Método que crea un Objeto tipo Autbus en una posición definida.
      */
@@ -277,47 +255,47 @@ public class WorldJack extends World
         Autobus a= new Autobus();
         addObject(a,790,300);
     }
+
     /**
      * Método que crea un Objeto tipo Nena en una posición definida.
      */
-     private void creaNena()
+    private void creaNena()
     {
         Nena n= new Nena();
         //int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
         //int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
         addObject(n,50,450);
     }
+
     /**
      * Método que crea un Objeto de la Clase CarroAzul en una posición definida.
      */
-      private void creaCarroAzul()
+    private void creaCarroAzul()
     {
         CarroAzul azul= new CarroAzul();
         addObject(azul,0,300);
     }
-    
+
     /**
      * Método que crea un Objeto de la Clase CarroVerde en una posición definida.
      */
-      private void creaCarroVerde()
+    private void creaCarroVerde()
     {
         CarroVerde verde= new CarroVerde();
         CarroVerde verde1= new CarroVerde();
-       
+
         addObject(verde,790,220);
         addObject(verde1,790,380);
     }
-   
-    
-    
+
     /**
      * Método que detiene la música cuando se termina el juego
      */
     public void detenerMusica()
     {
-       musica.stop();
-       
+        musica.stop();
     }
+
     /**
      * Método que es llamado por el sistema de Greenfoot cuando se ha iniciado la simulación, y
      * empieza iniciando el sonido del juego
@@ -326,9 +304,8 @@ public class WorldJack extends World
     {
         super.started();
         musica.play();
-        
     }
-    
+
     /**
      * Método que es llamado por el sistema de Greenfoot cuando se pone en pausa el proyecto, cuando sucede esto 
      * tambien se pause la canción
@@ -337,9 +314,8 @@ public class WorldJack extends World
     {
         super.stopped();
         musica.pause();
-        
     }
-    
+
 }
-    
+
   

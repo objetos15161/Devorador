@@ -3,18 +3,17 @@ import greenfoot.*;
 /**
  * Write a description of class Autobus here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @author (Beatriz Adriana Segura Luevano ) 
+ * @version (2015.11.27)
  */
 public class Autobus extends Vehiculo
 {
     /**
-     * Act - do whatever the Autobus wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Indica el movimiento hacia la izquierda del vehiculo 
      */
     public void act() 
     {
-        // Add your action code here.
         super.removeVehiculo();
         move(-8);
     }    

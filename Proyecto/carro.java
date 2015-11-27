@@ -3,14 +3,14 @@ import greenfoot.*;
 /**
  * Write a description of class carro here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @author (Beatriz Adriana Segura Luevano ) 
+ * @version (2015.11.27)
  */
 public class Carro extends Vehiculo
 {
     /**
-     * Act - do whatever the carro wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Indica el movimiento hacia la izquierda del vehiculo
      */
     public void act() 
     {

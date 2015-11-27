@@ -1,7 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Manzana\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.text=\r\n\ Se\ manda\ llamar\ al\ metodo\ que\ hace\ los\ movimientos\ de\ la\ manzana\r\n
 comment1.params=
 comment1.target=void\ mueveManzana()
+comment1.text=\r\n\ Este\ metodo\ hace\ todas\ las\ validaciones\ necesarias\ para\ el\ movimiento\ de\ la\ manzana\ que\ es\ forma\ de\ escalera\ \r\n
 numComments=2

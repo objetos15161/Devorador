@@ -1,43 +1,43 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Reloj here.
+ * Este clase nos ayudara a saber el tiempo en el juego
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * 
+ * @author (Karen Castillo Rodriguez) 
+ * @author (Beatriz Adriana Segura Luevano) 
+ * @version (2015.11.27)
  */
 public class Reloj extends Actor
 
-    {
-   private SimpleTimer timer;
-   private Counter valor;
+{
+    private SimpleTimer timer;
+    private Counter valor;
     /**
-     * Act - do whatever the Reloj wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor del reloj en el cual se agrega un contador
      */
-   
+
     public Reloj()
     {
-      valor = new Counter("Tiempo: ");
-      timer = new SimpleTimer();
+        valor = new Counter("Tiempo: ");
+        timer = new SimpleTimer();
     }
-    
+
     protected void addedToWorld(World mundo)
     {
-       mundo.addObject(valor,745,20);
+        mundo.addObject(valor,745,20);
     }
-    
+
     /**
-     * Act - do whatever the Reloj wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Aumenta cada segundo
      */
     public void act() 
     {
         if(timer.millisElapsed()>1000)
         {
-         valor.add(1);
-         timer.mark();
+            valor.add(1);
+            timer.mark();
         }
-    }    // Add your action code here.
-    }    
+    }   
+}    
 
