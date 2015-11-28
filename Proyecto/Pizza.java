@@ -14,7 +14,7 @@ public class Pizza extends Obstaculo
      */
     public void act() 
     {
-        move(5);
+        move(1);
         checaPizza();
     }    
 

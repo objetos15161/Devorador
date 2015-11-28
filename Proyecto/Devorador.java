@@ -14,13 +14,13 @@ public class Devorador extends Actor
     /**Contiene la direccion que lleva el Devorador*/
     private int direccion;
     /**Constante que representa la dirección hacia la derecha */
-    private static final int DERECHA=4;
+    private static final int DERECHA=5;
     /**Constante que representa la dirección hacia la izquierda */
-    private static final int IZQUIERDA=-4;
+    private static final int IZQUIERDA=-5;
     /**Constante que representa la dirección hacia arriba */
-    private static final int ARRIBA=-4;
+    private static final int ARRIBA=-5;
     /**Constante que representa la dirección hacia abajo */
-    private static final int ABAJO=4;
+    private static final int ABAJO=5;
     /**variable booleana que con un true indica que el personaje esta parado, con un false indica que el personaje esta en movimiento*/
     private boolean paradoB;
     /**Variables para crear las imagenes del Devorador cuando camina*/
@@ -253,7 +253,7 @@ public class Devorador extends Actor
 
             removeTouching(Fresa.class);
             Greenfoot.playSound("c.wav");
-            // puntos.setValue(puntos.getValue()+400);
+             //untos.setValue(puntos.getValue()+400);
             puntos.setValue(puntos.getValue()+50);
         }
         if(this.isTouching(Manzana.class) ){
@@ -379,10 +379,12 @@ public class Devorador extends Actor
         {
             World world;
             world = getWorld();
-
             world.addObject(new Perdiste(),400,240);
-            Greenfoot.delay(40);
-            aumentaRecords();
+            records.guardaRecords(puntos.getValue());
+            Greenfoot.delay(100);
+            Greenfoot.setWorld(new WorldMenu());
+          
+            
         }    
     }
 
@@ -395,34 +397,29 @@ public class Devorador extends Actor
             flag=1;
             nivel.setValue(nivel.getValue()+1);
             this.setLocation(750,120);
-            aumentaRecords();
+            
         }
 
         if(this.isTouching(Nena.class)){  
             nivel.setValue(nivel.getValue()+1);
             this.setLocation(30,470);  
-            aumentaRecords();
+           
         }
         if(this.isTouching(Casa.class)){
             World world = getWorld();
             this.setLocation(400,400);
             nivel.setValue(nivel.getValue()+1);
+            records.guardaRecords(puntos.getValue());
+            
             world.addObject(new Ganaste(),400,240);
             Greenfoot.playSound("sony.wav");
-            Greenfoot.delay(50);
-            aumentaRecords();
+           
+           
+            Greenfoot.delay(100);
+            Greenfoot.setWorld(new WorldMenu());
+            
 
         }
-    }
-
-     /**
-     * Éste método aumenta los Records y los guarda en el menu
-     */
-    public void aumentaRecords()
-    {
-        records.guardaRecords(puntos.getValue());
-        Greenfoot.delay(30);
-        Greenfoot.setWorld(new WorldMenu());
     }
     
      /**

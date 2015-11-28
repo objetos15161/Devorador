@@ -19,7 +19,7 @@ public class Puntos extends Actor
         world = getWorld();
         int y = getY();
         int alto = world.getHeight();
-        if(y == alto-30)
+        if(y == alto-50)
             world.removeObject(this);
     }
 }

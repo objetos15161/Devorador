@@ -30,7 +30,7 @@ public class Fresa extends Puntos
         int x= w.getWidth();
         int y= w.getHeight();
 
-        if ( Greenfoot.getRandomNumber(1000) < 10 ){
+        if ( Greenfoot.getRandomNumber(1000) < 5 ){
             setLocation(Greenfoot.getRandomNumber(x), Greenfoot.getRandomNumber(y-100));
         } 
     }
