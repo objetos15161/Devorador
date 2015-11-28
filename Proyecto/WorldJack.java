@@ -27,7 +27,7 @@ public class WorldJack extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800,500, 1); 
 
-        musica=new GreenfootSound("Two.mp3");
+        musica=new GreenfootSound("Two.wav");
 
         setPaintOrder(Devorador.class,Fresa.class,Manzana.class,Platano.class,Pizza.class,Hamburguesa.class);
         preparaMundo();

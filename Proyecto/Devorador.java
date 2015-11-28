@@ -14,13 +14,13 @@ public class Devorador extends Actor
     /**Contiene la direccion que lleva el Devorador*/
     private int direccion;
     /**Constante que representa la dirección hacia la derecha */
-    private static final int DERECHA=5;
+    private static final int DERECHA=4;
     /**Constante que representa la dirección hacia la izquierda */
-    private static final int IZQUIERDA=-5;
+    private static final int IZQUIERDA=-4;
     /**Constante que representa la dirección hacia arriba */
-    private static final int ARRIBA=-5;
+    private static final int ARRIBA=-4;
     /**Constante que representa la dirección hacia abajo */
-    private static final int ABAJO=5;
+    private static final int ABAJO=4;
     /**variable booleana que con un true indica que el personaje esta parado, con un false indica que el personaje esta en movimiento*/
     private boolean paradoB;
     /**Variables para crear las imagenes del Devorador cuando camina*/
@@ -395,11 +395,13 @@ public class Devorador extends Actor
             flag=1;
             nivel.setValue(nivel.getValue()+1);
             this.setLocation(750,120);
+            aumentaRecords();
         }
 
         if(this.isTouching(Nena.class)){  
             nivel.setValue(nivel.getValue()+1);
             this.setLocation(30,470);  
+            aumentaRecords();
         }
         if(this.isTouching(Casa.class)){
             World world = getWorld();
