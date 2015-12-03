@@ -10,7 +10,7 @@ import greenfoot.*;
 public class Autobus extends Vehiculo
 {
     /**
-     * Indica el movimiento hacia la izquierda del vehiculo 
+     * Indica el movimiento hacia la izquierda del vehiculo y hereda el método de removeVehiculo.
      */
     public void act() 
     {
