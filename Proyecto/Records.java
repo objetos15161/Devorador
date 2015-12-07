@@ -4,9 +4,11 @@ import greenfoot.UserInfo;
 /**
  * Write a description of class Records here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Neil Brown 
+ * @version 1.0
+ * 
  */
+
 public class Records  
 {
     // instance variables - replace the example below with your own

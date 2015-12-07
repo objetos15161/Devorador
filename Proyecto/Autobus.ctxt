@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-comment0.text=\r\n\ Indica\ el\ movimiento\ hacia\ la\ izquierda\ del\ vehiculo\ y\ hereda\ el\ m\u00E9todo\ de\ removeVehiculo.\r\n
+comment0.text=\r\n\ Indica\ el\ movimiento\ hacia\ la\ izquierda\ del\ vehiculo\ \r\n
 numComments=1

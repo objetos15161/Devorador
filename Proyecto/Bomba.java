@@ -11,7 +11,7 @@ public class Bomba extends Obstaculo
 {
       private GreenfootImage bom;
     /**
-     * constructor que abre y carga la imagen de la bomba 
+     * Constructor que abre y carga la imagen de la bomba 
      */
     public Bomba() 
     {

@@ -9,8 +9,7 @@ import greenfoot.*;
  */
 public class WorldCreditos extends World
 {
-    private AtrasBoton a;
-    private GreenfootSound c;
+    private AtrasBoton atras;
     private ScoreBoard score;
     /**
      * Constructor for objects of class WorldCreditos.
@@ -20,8 +19,8 @@ public class WorldCreditos extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 500, 1); 
-        a=new AtrasBoton();
-        addObject(a,700,400);
+        atras=new AtrasBoton();
+        addObject(atras,700,400);
     }
 
     /**
@@ -31,7 +30,7 @@ public class WorldCreditos extends World
     {
         if(Greenfoot.getMouseInfo()!=null){
 
-            if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor()==a){
+            if(Greenfoot.getMouseInfo().getButton()==1 && Greenfoot.getMouseInfo().getActor()==atras){
                 //  clic.play();
                 Greenfoot.setWorld(new WorldMenu());
             }

@@ -1,10 +1,11 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Nena here.
+ * El objeto de esta clase aparece en el segundo nivel y tiene que ser rescatada por el Devorador para avanzar de nivel
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodriguez) 
+ * @author (Beatriz Adriana Segura Luevano) 
+ * @version (2015.11.27)
  */
 public class Nena extends Puntos
 {
@@ -18,9 +19,6 @@ public class Nena extends Puntos
     {
      
     }
-  
-   
- 
 }    
     
 

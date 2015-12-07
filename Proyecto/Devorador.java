@@ -47,8 +47,7 @@ public class Devorador extends Actor
     private int flag=0;
 
     /**
-     * Constructor de la Clase Devorador que tiene como parametros puntos, vidas , nivel, se asignan las imagenes a las variables definidas anteriormente,
-     * la variable booleana se define com falso, avanza se iguala a 0, direccion en IZQUIERDA y finalmente se crea un objeto records.
+     * Constructor 
      */
 
     public Devorador(int numPuntos,int numVidas,int numNivel)
@@ -76,12 +75,13 @@ public class Devorador extends Actor
         paradoB=true;
         avanza=0;
         direccion=IZQUIERDA; 
+
         records=new Records();
     }
 
     /**
      * Este metodo agrega los contadores de nivel, puntos y vidas al mundo cuando se
-     * crea el objeto Devorador asignandole coordenadas espesificas, estos llevaran el registro del aumento y decremento.
+     * crea el Jugador de nombre Devorador
      */
 
     protected void addedToWorld(World mundo)
@@ -92,27 +92,27 @@ public class Devorador extends Actor
     }
 
     /**
-     * Este metodo es donde se mandan llamar todas las validaciones que contiene el Devorador, para que el jugador pueda mover el objeto Devorador
-     * e interactuar con el entorno de los niveles.
+     * Este metodo es donde se mandan llamar todas las validaciones que contiene el Devorador
      */
+    
     public void act() 
     { 
-        checaTeclas();
+        move();
         caminar();
-        validacionesLimites();
-        
         validaFruta();
         validaComidaCha();
         validaObstaculos();
         checaVidas();
+        validaciones();
         aumentaNivel();
 
     }    
+
     /**
      * En este metodo se hacen las validaciones sobre el movimiento de las teclas y la direccion que debe tomar el Devorador
      */
     
-    public void checaTeclas()
+    public void move()
     {
         if(Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("left")){
             paradoB=false;
@@ -144,7 +144,7 @@ public class Devorador extends Actor
     /**
      * Éste método verifica si el ladron esta parado o caminando con la variable booleana parado. Se verifica su
      * dirección y movimiento y se cambia por la imagen que le corresponda para cuando se presione
-     * una tecla para que simule que el personaje camina. Este método se invoca en el método caminar.
+     * una tecla se vea que el personaje camina
      */       
     public void avanzaJack()
     {
@@ -195,10 +195,7 @@ public class Devorador extends Actor
         }
         setImage(paradoI);
     }
-    
-    /**
-     * Método que simula que camina el Jugador con un ciclo que invoca en método avanzaJack.
-     */
+
     public void caminar()
     {
         avanza++;
@@ -210,9 +207,9 @@ public class Devorador extends Actor
 
     /**
      * Este método contiene las validaciones necesarias para que el Jugador no pase el limite 
-     * y que no pase las clases Counter y Selve.
+     * y que no pase las clases Counter y Selve
      */
-    public void validacionesLimites()
+    public void validaciones()
     {  
         GreenfootImage miImagen=super.getImage();
         if(this.isTouching(Counter.class) || this.isTouching(Selve.class)){
@@ -236,29 +233,35 @@ public class Devorador extends Actor
         if(getY()+miImagen.getHeight()/2>=getWorld().getHeight()){
             this.setLocation(getX(),getY()+ARRIBA);
         }
+
     }
-    
     /**
      * Éste método verifica si el Devorador esta "devorando" frutas, asi mismo agrega sonidos y suma puntos
      */   
     public void validaFruta()
     { 
+
         if(this.isTouching(Platano.class)){
+
             removeTouching(Platano.class);
             Greenfoot.playSound("c.wav");
             puntos.setValue(puntos.getValue()+10);
         }
         if(this.isTouching(Fresa.class)){
+
             removeTouching(Fresa.class);
             Greenfoot.playSound("c.wav");
+            // puntos.setValue(puntos.getValue()+400);
             puntos.setValue(puntos.getValue()+50);
         }
         if(this.isTouching(Manzana.class) ){
+
             removeTouching(Manzana.class);
             Greenfoot.playSound("c.wav");
             puntos.setValue(puntos.getValue()+20);
         }  
     }
+
     /**
      * Éste método verifica si el Devorador esta "devorando" comida chatarra, asi mismo agrega sonidos y resta puntos o vidas segun sea el caso 
      */  
@@ -304,35 +307,47 @@ public class Devorador extends Actor
             removeTouching(Carro.class);
             Greenfoot.playSound("bocina.wav");
             vidas.setValue(vidas.getValue()-1);
+
             setImage("muerto.png");
+
             Greenfoot.delay(20);
             this.setLocation(600,140);
         } 
+
         if(this.isTouching(CarroVerde.class) ){
             World world;
             world=getWorld();
             removeTouching(CarroVerde.class);
             Greenfoot.playSound("bocina.wav");
             vidas.setValue(vidas.getValue()-1);
+
             setImage("muerto.png");
+
             Greenfoot.delay(20);
             this.setLocation(30,470);
         } 
+
         if(this.isTouching(CarroAzul.class) ){
             World world;
             world=getWorld();
             removeTouching(CarroAzul.class);
             Greenfoot.playSound("bocina.wav");
             vidas.setValue(vidas.getValue()-1);
+
             setImage("muerto.png");
+
             Greenfoot.delay(20);
             this.setLocation(30,470);
         } 
+
         if(this.isTouching(Autobus.class)){
             World world;
             world=getWorld();
             removeTouching(Autobus.class);
+
             vidas.setValue(0);
+            // vidas.setValue(vidas.getValue()-1);
+
             setImage("muerto.png");
             Greenfoot.playSound("bocina.wav");
             Greenfoot.delay(20);
@@ -352,20 +367,23 @@ public class Devorador extends Actor
         }
 
     }
+
      /**
      * Éste método verifica si los puntos o las vidas del Devorador llegaron a 0 y le avisa al jugador que ha perdido 
      */
     public void checaVidas()
     {
-        if( vidas.getValue()==0 || puntos.getValue()==0){
+        if( vidas.getValue()==0 || puntos.getValue()==0)
+        {
             World world;
             world = getWorld();
+
             world.addObject(new Perdiste(),400,240);
-            records.guardaRecords(puntos.getValue());
-            Greenfoot.delay(100);
-            Greenfoot.setWorld(new WorldMenu());
+            Greenfoot.delay(40);
+            aumentaRecords();
         }    
     }
+
      /**
      * Éste método verifica si el Devorador junto los puntos necesarios para avanzar de nivel o llego al final del juego
      */
@@ -375,8 +393,8 @@ public class Devorador extends Actor
             flag=1;
             nivel.setValue(nivel.getValue()+1);
             this.setLocation(750,120);
-            
         }
+
         if(this.isTouching(Nena.class)){  
             nivel.setValue(nivel.getValue()+1);
             this.setLocation(30,470);  
@@ -385,15 +403,26 @@ public class Devorador extends Actor
             World world = getWorld();
             this.setLocation(400,400);
             nivel.setValue(nivel.getValue()+1);
-            records.guardaRecords(puntos.getValue());
             world.addObject(new Ganaste(),400,240);
             Greenfoot.playSound("sony.wav");
-            Greenfoot.delay(100);
-            Greenfoot.setWorld(new WorldMenu());
+            Greenfoot.delay(50);
+            aumentaRecords();
+
         }
     }
+
      /**
-     * Éste método regresa al WorldJack el nivel en el que esta 
+     * Éste método aumenta los Records y los guarda en el menu
+     */
+    public void aumentaRecords()
+    {
+        records.guardaRecords(puntos.getValue());
+        Greenfoot.delay(30);
+        Greenfoot.setWorld(new WorldMenu());
+    }
+    
+     /**
+     * Éste método regresa el nivel en el que esta el jugador
      */
     public int getNivel()
     {

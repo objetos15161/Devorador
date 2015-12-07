@@ -1,10 +1,11 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Bache here.
+ * En esta clase solo se hace referencia a la imagen que aparece en el 2o nivel 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Karen Castillo Rodríguez) 
+ * @author (Beatriz Adriana Segura Luevano ) 
+ * @version (2015.11.27)
  */
 public class Bache extends Obstaculo
 {
@@ -14,6 +15,5 @@ public class Bache extends Obstaculo
      */
     public void act() 
     {
-        // Add your action code here.
     }    
 }

@@ -9,13 +9,13 @@ import greenfoot.*;
  */
 public class Casa extends Actor
 {
-    private GreenfootImage hause;
+    private GreenfootImage house;
     /**
      * Es el contructor de tipo Casa, se crea una Variable y se le asigna la imagen.
      */
     public Casa() 
     {
-        hause=new GreenfootImage("casa.png");
-        setImage(hause);
+        house=new GreenfootImage("casa.png");
+        setImage(house);
     }    
 }

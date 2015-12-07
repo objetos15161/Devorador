@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Autobus here.
+ * Crea el objeto autobus que aparece en el 2o nivel
  * 
  * @author (Karen Castillo Rodríguez) 
  * @author (Beatriz Adriana Segura Luevano ) 
@@ -10,7 +10,7 @@ import greenfoot.*;
 public class Autobus extends Vehiculo
 {
     /**
-     * Indica el movimiento hacia la izquierda del vehiculo y hereda el método de removeVehiculo.
+     * Indica el movimiento hacia la izquierda del vehiculo 
      */
     public void act() 
     {

@@ -1,7 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class carro here.
+ * Crea el carro que aparece en el 2o nivel
  * 
  * @author (Karen Castillo Rodríguez) 
  * @author (Beatriz Adriana Segura Luevano ) 

@@ -14,7 +14,7 @@ public class WorldJack extends World
 
     private Reloj reloj;
     private Devorador jack;
-  
+    private GreenfootSound musica;
     private SimpleTimer cuenta,cuenta2;
 
     /**
@@ -26,6 +26,9 @@ public class WorldJack extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800,500, 1); 
+
+        musica=new GreenfootSound("Two.mp3");
+
         setPaintOrder(Devorador.class,Fresa.class,Manzana.class,Platano.class,Pizza.class,Hamburguesa.class);
         preparaMundo();
 
@@ -36,7 +39,7 @@ public class WorldJack extends World
      */
     public void act()
     {   
-        
+        musica.playLoop();
 
         switch (jack.getNivel())
         {
@@ -123,15 +126,15 @@ public class WorldJack extends World
      */
     public void primerNivel(){
 
-        if ( Greenfoot.getRandomNumber(1000) < 10){ 
+        if ( Greenfoot.getRandomNumber(1000) < 30 ){ 
             creaPlatano();
         }
-        if ( Greenfoot.getRandomNumber(1000) < 5 )
+        if ( Greenfoot.getRandomNumber(1000) < 10 )
         { 
             creaManzana();
         }
 
-        if ( Greenfoot.getRandomNumber(1000) < 5)
+        if ( Greenfoot.getRandomNumber(1000) < 10)
         { 
             creaPizza();
         }
@@ -180,7 +183,7 @@ public class WorldJack extends World
     {
 
         setBackground("fondo2.jpg");
-        setPaintOrder(Ganaste.class,Devorador.class,Counter.class,CarroVerde.class,CarroAzul.class,Bomba.class);  
+        setPaintOrder(Counter.class,CarroVerde.class,CarroAzul.class,Bomba.class);  
         removeObjects(getObjects(Carro.class));
         removeObjects(getObjects(Autobus.class));
         removeObjects(getObjects(Nena.class));
@@ -229,6 +232,7 @@ public class WorldJack extends World
     {
         Hamburguesa h= new Hamburguesa();
         int x = Greenfoot.getRandomNumber(getWidth());//x va a tomar diferentes posiciones
+        int y = Greenfoot.getRandomNumber(getHeight());//y va a tomar diferentes posiciones
         addObject(h,x,50);
     }
 
@@ -284,7 +288,33 @@ public class WorldJack extends World
         addObject(verde1,790,380);
     }
 
-    
+    /**
+     * Método que detiene la música cuando se termina el juego
+     */
+    public void detenerMusica()
+    {
+        musica.stop();
+    }
+
+    /**
+     * Método que es llamado por el sistema de Greenfoot cuando se ha iniciado la simulación, y
+     * empieza iniciando el sonido del juego
+     */
+    public void started()
+    {
+        super.started();
+        musica.play();
+    }
+
+    /**
+     * Método que es llamado por el sistema de Greenfoot cuando se pone en pausa el proyecto, cuando sucede esto 
+     * tambien se pause la canción
+     */
+    public void stopped()
+    {
+        super.stopped();
+        musica.pause();
+    }
 
 }
 
